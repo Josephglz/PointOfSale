@@ -1,0 +1,3 @@
+# Punto de Venta
+Proyecto Punto de Venta desarrollado en C# con Net Core 4.5
+En proceso...

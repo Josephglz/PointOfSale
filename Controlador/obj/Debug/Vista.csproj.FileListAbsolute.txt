@@ -1,0 +1,14 @@
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\Controlador.dll
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\Controlador.pdb
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Vista.csproj.GenerateResource.cache
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Vista.csproj.CoreCompileInputs.cache
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Controlador.dll
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Controlador.pdb
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Vista.csproj.AssemblyReference.cache
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Vista.loader.resources
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Controlador.Properties.Resources.resources
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Controlador.login.resources
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\Modelo.dll
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\Modelo.pdb
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Controlador.home.resources
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Controlador.calculadora.resources

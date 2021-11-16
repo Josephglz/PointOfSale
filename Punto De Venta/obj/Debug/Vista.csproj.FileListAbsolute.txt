@@ -1,0 +1,9 @@
+E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\bin\Debug\Punto De Venta.exe.config
+E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\bin\Debug\Punto De Venta.exe
+E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\bin\Debug\Punto De Venta.pdb
+E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\obj\Debug\Punto_De_Venta.Properties.Resources.resources
+E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\obj\Debug\Vista.csproj.GenerateResource.cache
+E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\obj\Debug\Vista.csproj.CoreCompileInputs.cache
+E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\obj\Debug\Punto De Venta.exe
+E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\obj\Debug\Punto De Venta.pdb
+E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\obj\Debug\Punto_De_Venta.loader.resources
