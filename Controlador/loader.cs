@@ -22,7 +22,7 @@ namespace Vista
         {
             if(loaderbar.Value < 100)
             {
-                loaderbar.Value += 10;
+                loaderbar.Value += 5;
             }
             else
             {
@@ -30,6 +30,11 @@ namespace Vista
                 this.Hide();
                 timer1.Stop();
             }
+        }
+
+        private void loader_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

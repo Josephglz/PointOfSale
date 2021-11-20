@@ -26,6 +26,11 @@ namespace Controlador
             this.usuarios = user;
             this.productos = productos;
             InitializeComponent();
+            PanelProductos.AutoScroll = false;
+            PanelProductos.HorizontalScroll.Enabled = false;
+            PanelProductos.HorizontalScroll.Visible = false;
+            PanelProductos.HorizontalScroll.Maximum = 0;
+            PanelProductos.AutoScroll = true;
         }
 
         private void home_Load(object sender, EventArgs e)
@@ -96,6 +101,11 @@ namespace Controlador
             DateTime date = new DateTime(2020, month, 1);
 
             return date.ToString("MMM");
+        }
+
+        private void tCodigo_Enter(object sender, EventArgs e)
+        {
+            tCodigo.Text = "";
         }
     }
 }

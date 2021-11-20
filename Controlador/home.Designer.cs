@@ -41,9 +41,20 @@ namespace Controlador
             this.profilePicture = new System.Windows.Forms.PictureBox();
             this.clock = new System.Windows.Forms.Timer(this.components);
             this.panelCalculadora = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.prod_Panel = new System.Windows.Forms.Panel();
+            this.prod_LName = new System.Windows.Forms.Label();
+            this.prod_LPrice = new System.Windows.Forms.Label();
+            this.prod_BAdd = new System.Windows.Forms.Button();
+            this.prod_BRemove = new System.Windows.Forms.Button();
+            this.prod_LCant = new System.Windows.Forms.Label();
+            this.prod_TCant = new System.Windows.Forms.TextBox();
+            this.PanelProductos = new System.Windows.Forms.FlowLayoutPanel();
+            this.tCodigo = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
+            this.prod_Panel.SuspendLayout();
+            this.PanelProductos.SuspendLayout();
             this.SuspendLayout();
             // 
             // lNombre
@@ -149,26 +160,143 @@ namespace Controlador
             // 
             // panelCalculadora
             // 
-            this.panelCalculadora.Location = new System.Drawing.Point(74, 295);
+            this.panelCalculadora.Location = new System.Drawing.Point(12, 278);
             this.panelCalculadora.Name = "panelCalculadora";
             this.panelCalculadora.Size = new System.Drawing.Size(250, 240);
             this.panelCalculadora.TabIndex = 9;
             // 
-            // label1
+            // prod_Panel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(318, 142);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "...";
+            this.prod_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(220)))), ((int)(((byte)(102)))));
+            this.prod_Panel.Controls.Add(this.prod_TCant);
+            this.prod_Panel.Controls.Add(this.prod_LCant);
+            this.prod_Panel.Controls.Add(this.prod_BRemove);
+            this.prod_Panel.Controls.Add(this.prod_BAdd);
+            this.prod_Panel.Controls.Add(this.prod_LPrice);
+            this.prod_Panel.Controls.Add(this.prod_LName);
+            this.prod_Panel.Location = new System.Drawing.Point(3, 3);
+            this.prod_Panel.Name = "prod_Panel";
+            this.prod_Panel.Size = new System.Drawing.Size(508, 44);
+            this.prod_Panel.TabIndex = 11;
+            // 
+            // prod_LName
+            // 
+            this.prod_LName.AutoSize = true;
+            this.prod_LName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prod_LName.Location = new System.Drawing.Point(3, 5);
+            this.prod_LName.Name = "prod_LName";
+            this.prod_LName.Size = new System.Drawing.Size(90, 16);
+            this.prod_LName.TabIndex = 0;
+            this.prod_LName.Text = "Sacapuntas";
+            // 
+            // prod_LPrice
+            // 
+            this.prod_LPrice.AutoSize = true;
+            this.prod_LPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prod_LPrice.Location = new System.Drawing.Point(3, 22);
+            this.prod_LPrice.Name = "prod_LPrice";
+            this.prod_LPrice.Size = new System.Drawing.Size(38, 15);
+            this.prod_LPrice.TabIndex = 1;
+            this.prod_LPrice.Text = "$3.50";
+            // 
+            // prod_BAdd
+            // 
+            this.prod_BAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(92)))), ((int)(((byte)(93)))));
+            this.prod_BAdd.FlatAppearance.BorderSize = 0;
+            this.prod_BAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prod_BAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prod_BAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(218)))), ((int)(((byte)(105)))));
+            this.prod_BAdd.Location = new System.Drawing.Point(422, 4);
+            this.prod_BAdd.Name = "prod_BAdd";
+            this.prod_BAdd.Size = new System.Drawing.Size(35, 35);
+            this.prod_BAdd.TabIndex = 2;
+            this.prod_BAdd.Text = "+";
+            this.prod_BAdd.UseVisualStyleBackColor = false;
+            // 
+            // prod_BRemove
+            // 
+            this.prod_BRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(92)))), ((int)(((byte)(93)))));
+            this.prod_BRemove.FlatAppearance.BorderSize = 0;
+            this.prod_BRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prod_BRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prod_BRemove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(102)))), ((int)(((byte)(113)))));
+            this.prod_BRemove.Location = new System.Drawing.Point(463, 4);
+            this.prod_BRemove.Name = "prod_BRemove";
+            this.prod_BRemove.Size = new System.Drawing.Size(35, 35);
+            this.prod_BRemove.TabIndex = 3;
+            this.prod_BRemove.Text = "X";
+            this.prod_BRemove.UseVisualStyleBackColor = false;
+            // 
+            // prod_LCant
+            // 
+            this.prod_LCant.AutoSize = true;
+            this.prod_LCant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prod_LCant.Location = new System.Drawing.Point(295, 14);
+            this.prod_LCant.Name = "prod_LCant";
+            this.prod_LCant.Size = new System.Drawing.Size(38, 16);
+            this.prod_LCant.TabIndex = 4;
+            this.prod_LCant.Text = "Cant:";
+            // 
+            // prod_TCant
+            // 
+            this.prod_TCant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(92)))), ((int)(((byte)(93)))));
+            this.prod_TCant.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.prod_TCant.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prod_TCant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(218)))), ((int)(((byte)(105)))));
+            this.prod_TCant.Location = new System.Drawing.Point(339, 11);
+            this.prod_TCant.Name = "prod_TCant";
+            this.prod_TCant.Size = new System.Drawing.Size(53, 22);
+            this.prod_TCant.TabIndex = 5;
+            this.prod_TCant.Text = "1";
+            this.prod_TCant.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // PanelProductos
+            // 
+            this.PanelProductos.AutoScroll = true;
+            this.PanelProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.PanelProductos.Controls.Add(this.prod_Panel);
+            this.PanelProductos.Location = new System.Drawing.Point(277, 101);
+            this.PanelProductos.Name = "PanelProductos";
+            this.PanelProductos.Size = new System.Drawing.Size(518, 349);
+            this.PanelProductos.TabIndex = 11;
+            // 
+            // tCodigo
+            // 
+            this.tCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(209)))));
+            this.tCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
+            this.tCodigo.Location = new System.Drawing.Point(277, 64);
+            this.tCodigo.Name = "tCodigo";
+            this.tCodigo.Size = new System.Drawing.Size(437, 31);
+            this.tCodigo.TabIndex = 12;
+            this.tCodigo.Text = "CÓDIGO PRODUCTO";
+            this.tCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tCodigo.Enter += new System.EventHandler(this.tCodigo_Enter);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(92)))), ((int)(((byte)(93)))));
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(218)))), ((int)(((byte)(105)))));
+            this.btnAgregar.Location = new System.Drawing.Point(720, 64);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 31);
+            this.btnAgregar.TabIndex = 13;
+            this.btnAgregar.Text = "+";
+            this.btnAgregar.UseVisualStyleBackColor = false;
             // 
             // home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(207)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1020, 551);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.tCodigo);
+            this.Controls.Add(this.PanelProductos);
             this.Controls.Add(this.panelCalculadora);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -179,6 +307,9 @@ namespace Controlador
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
+            this.prod_Panel.ResumeLayout(false);
+            this.prod_Panel.PerformLayout();
+            this.PanelProductos.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,6 +327,15 @@ namespace Controlador
         private System.Windows.Forms.Label lNombreT;
         private System.Windows.Forms.Timer clock;
         private System.Windows.Forms.Panel panelCalculadora;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel prod_Panel;
+        private System.Windows.Forms.TextBox prod_TCant;
+        private System.Windows.Forms.Label prod_LCant;
+        private System.Windows.Forms.Button prod_BRemove;
+        private System.Windows.Forms.Button prod_BAdd;
+        private System.Windows.Forms.Label prod_LPrice;
+        private System.Windows.Forms.Label prod_LName;
+        private System.Windows.Forms.FlowLayoutPanel PanelProductos;
+        private System.Windows.Forms.TextBox tCodigo;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }

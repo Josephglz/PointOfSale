@@ -88,5 +88,10 @@ namespace Controlador
         {
             tNumeros.Text = "";
         }
+
+        private void btnEnter_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

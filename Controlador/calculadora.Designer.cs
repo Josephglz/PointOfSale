@@ -189,6 +189,7 @@ namespace Controlador
             this.btnEnter.TabIndex = 11;
             this.btnEnter.Text = "↲";
             this.btnEnter.UseVisualStyleBackColor = false;
+            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
             // btn3
             // 
