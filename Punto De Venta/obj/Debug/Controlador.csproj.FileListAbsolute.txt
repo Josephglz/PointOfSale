@@ -9,6 +9,8 @@ E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\obj\Debug\Controlador.csproj.As
 E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\obj\Debug\Punto_De_Venta.Properties.Resources.resources
 E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\obj\Debug\Controlador.csproj.GenerateResource.cache
 E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
-E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\obj\Debug\Controlador.csproj.CopyComplete
 E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\obj\Debug\Punto De Venta.exe
 E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\obj\Debug\Punto De Venta.pdb
+E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\obj\Debug\Controlador.csproj.CopyComplete
+E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\bin\Debug\ControladorDLL.dll
+E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\bin\Debug\ControladorDLL.pdb

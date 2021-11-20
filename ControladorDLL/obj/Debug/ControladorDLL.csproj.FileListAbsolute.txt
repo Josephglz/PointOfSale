@@ -1,0 +1,6 @@
+E:\C#\Punto de Venta\PuntoDeVenta\ControladorDLL\bin\Debug\ControladorDLL.dll
+E:\C#\Punto de Venta\PuntoDeVenta\ControladorDLL\bin\Debug\ControladorDLL.pdb
+E:\C#\Punto de Venta\PuntoDeVenta\ControladorDLL\obj\Debug\ControladorDLL.csproj.CoreCompileInputs.cache
+E:\C#\Punto de Venta\PuntoDeVenta\ControladorDLL\obj\Debug\ControladorDLL.dll
+E:\C#\Punto de Venta\PuntoDeVenta\ControladorDLL\obj\Debug\ControladorDLL.pdb
+E:\C#\Punto de Venta\PuntoDeVenta\ControladorDLL\obj\Debug\ControladorDLL.csproj.AssemblyReference.cache
