@@ -1,6 +1,8 @@
 # Punto de Venta
-![](https://img.shields.io/badge/Fase%3A-En%20desarrollo-blue)<br>
-Proyecto Punto de Venta desarrollado en C# con Net Core 4.5
+![](https://img.shields.io/badge/Fase%3A-En%20desarrollo-blue)
+![](https://img.shields.io/github/last-commit/Josephglz/PuntoDeVenta)
+![](https://img.shields.io/github/languages/top/Josephglz/PuntoDeVenta)<br>
+Proyecto Punto de Venta desarrollado en C# con Net Core 4.5<br>
 
 
 <b>Logos e imágenes son creadas de prueba únicamente.</b><br>
