@@ -38,7 +38,6 @@ namespace Controlador
             this.btn6 = new System.Windows.Forms.Button();
             this.btn5 = new System.Windows.Forms.Button();
             this.btn4 = new System.Windows.Forms.Button();
-            this.btnEnter = new System.Windows.Forms.Button();
             this.btn3 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
@@ -175,22 +174,6 @@ namespace Controlador
             this.btn4.UseVisualStyleBackColor = false;
             this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
-            // btnEnter
-            // 
-            this.btnEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.btnEnter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEnter.FlatAppearance.BorderSize = 0;
-            this.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(166)))), ((int)(((byte)(41)))));
-            this.btnEnter.Location = new System.Drawing.Point(192, 150);
-            this.btnEnter.Name = "btnEnter";
-            this.btnEnter.Size = new System.Drawing.Size(47, 67);
-            this.btnEnter.TabIndex = 11;
-            this.btnEnter.Text = "↲";
-            this.btnEnter.UseVisualStyleBackColor = false;
-            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
-            // 
             // btn3
             // 
             this.btn3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
@@ -295,7 +278,6 @@ namespace Controlador
             this.Controls.Add(this.tNumeros);
             this.Controls.Add(this.btnComa);
             this.Controls.Add(this.btn0);
-            this.Controls.Add(this.btnEnter);
             this.Controls.Add(this.btn3);
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn1);
@@ -309,6 +291,8 @@ namespace Controlador
             this.Controls.Add(this.btn7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "calculadora";
             this.Load += new System.EventHandler(this.calculadora_Load);
             this.ResumeLayout(false);
@@ -326,7 +310,6 @@ namespace Controlador
         private System.Windows.Forms.Button btn6;
         private System.Windows.Forms.Button btn5;
         private System.Windows.Forms.Button btn4;
-        private System.Windows.Forms.Button btnEnter;
         private System.Windows.Forms.Button btn3;
         private System.Windows.Forms.Button btn2;
         private System.Windows.Forms.Button btn1;

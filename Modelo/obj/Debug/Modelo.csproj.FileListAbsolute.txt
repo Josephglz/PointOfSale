@@ -3,3 +3,4 @@ E:\C#\Punto de Venta\PuntoDeVenta\Modelo\bin\Debug\Modelo.pdb
 E:\C#\Punto de Venta\PuntoDeVenta\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
 E:\C#\Punto de Venta\PuntoDeVenta\Modelo\obj\Debug\Modelo.dll
 E:\C#\Punto de Venta\PuntoDeVenta\Modelo\obj\Debug\Modelo.pdb
+E:\C#\Punto de Venta\PuntoDeVenta\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.cache

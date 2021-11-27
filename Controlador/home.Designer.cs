@@ -1,4 +1,6 @@
 ﻿
+using System.Drawing;
+
 namespace Controlador
 {
     partial class home
@@ -41,20 +43,35 @@ namespace Controlador
             this.profilePicture = new System.Windows.Forms.PictureBox();
             this.clock = new System.Windows.Forms.Timer(this.components);
             this.panelCalculadora = new System.Windows.Forms.Panel();
-            this.prod_Panel = new System.Windows.Forms.Panel();
-            this.prod_LName = new System.Windows.Forms.Label();
-            this.prod_LPrice = new System.Windows.Forms.Label();
-            this.prod_BAdd = new System.Windows.Forms.Button();
-            this.prod_BRemove = new System.Windows.Forms.Button();
-            this.prod_LCant = new System.Windows.Forms.Label();
-            this.prod_TCant = new System.Windows.Forms.TextBox();
             this.PanelProductos = new System.Windows.Forms.FlowLayoutPanel();
             this.tCodigo = new System.Windows.Forms.TextBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnEnter = new System.Windows.Forms.Button();
+            this.notifPanel = new System.Windows.Forms.Panel();
+            this.notifIcon = new FontAwesome.Sharp.IconPictureBox();
+            this.notifCloseBtn = new System.Windows.Forms.Button();
+            this.notifLabel = new System.Windows.Forms.Label();
+            this.panelTotales = new System.Windows.Forms.Panel();
+            this.lIVA = new System.Windows.Forms.Label();
+            this.lSubtotal = new System.Windows.Forms.Label();
+            this.lblIVA = new System.Windows.Forms.Label();
+            this.lblSubtotal = new System.Windows.Forms.Label();
+            this.lTotal = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnReports = new FontAwesome.Sharp.IconButton();
+            this.btnSell = new FontAwesome.Sharp.IconButton();
+            this.btnPrintTicket = new FontAwesome.Sharp.IconButton();
+            this.btnSearch = new FontAwesome.Sharp.IconButton();
+            this.btnClearCart = new FontAwesome.Sharp.IconButton();
+            this.btnInventory = new FontAwesome.Sharp.IconButton();
+            this.btnUsers = new FontAwesome.Sharp.IconButton();
+            this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
-            this.prod_Panel.SuspendLayout();
-            this.PanelProductos.SuspendLayout();
+            this.notifPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.notifIcon)).BeginInit();
+            this.panelTotales.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lNombre
@@ -165,96 +182,10 @@ namespace Controlador
             this.panelCalculadora.Size = new System.Drawing.Size(250, 240);
             this.panelCalculadora.TabIndex = 9;
             // 
-            // prod_Panel
-            // 
-            this.prod_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(220)))), ((int)(((byte)(102)))));
-            this.prod_Panel.Controls.Add(this.prod_TCant);
-            this.prod_Panel.Controls.Add(this.prod_LCant);
-            this.prod_Panel.Controls.Add(this.prod_BRemove);
-            this.prod_Panel.Controls.Add(this.prod_BAdd);
-            this.prod_Panel.Controls.Add(this.prod_LPrice);
-            this.prod_Panel.Controls.Add(this.prod_LName);
-            this.prod_Panel.Location = new System.Drawing.Point(3, 3);
-            this.prod_Panel.Name = "prod_Panel";
-            this.prod_Panel.Size = new System.Drawing.Size(508, 44);
-            this.prod_Panel.TabIndex = 11;
-            // 
-            // prod_LName
-            // 
-            this.prod_LName.AutoSize = true;
-            this.prod_LName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prod_LName.Location = new System.Drawing.Point(3, 5);
-            this.prod_LName.Name = "prod_LName";
-            this.prod_LName.Size = new System.Drawing.Size(90, 16);
-            this.prod_LName.TabIndex = 0;
-            this.prod_LName.Text = "Sacapuntas";
-            // 
-            // prod_LPrice
-            // 
-            this.prod_LPrice.AutoSize = true;
-            this.prod_LPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prod_LPrice.Location = new System.Drawing.Point(3, 22);
-            this.prod_LPrice.Name = "prod_LPrice";
-            this.prod_LPrice.Size = new System.Drawing.Size(38, 15);
-            this.prod_LPrice.TabIndex = 1;
-            this.prod_LPrice.Text = "$3.50";
-            // 
-            // prod_BAdd
-            // 
-            this.prod_BAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(92)))), ((int)(((byte)(93)))));
-            this.prod_BAdd.FlatAppearance.BorderSize = 0;
-            this.prod_BAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prod_BAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prod_BAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(218)))), ((int)(((byte)(105)))));
-            this.prod_BAdd.Location = new System.Drawing.Point(422, 4);
-            this.prod_BAdd.Name = "prod_BAdd";
-            this.prod_BAdd.Size = new System.Drawing.Size(35, 35);
-            this.prod_BAdd.TabIndex = 2;
-            this.prod_BAdd.Text = "+";
-            this.prod_BAdd.UseVisualStyleBackColor = false;
-            // 
-            // prod_BRemove
-            // 
-            this.prod_BRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(92)))), ((int)(((byte)(93)))));
-            this.prod_BRemove.FlatAppearance.BorderSize = 0;
-            this.prod_BRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prod_BRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prod_BRemove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(102)))), ((int)(((byte)(113)))));
-            this.prod_BRemove.Location = new System.Drawing.Point(463, 4);
-            this.prod_BRemove.Name = "prod_BRemove";
-            this.prod_BRemove.Size = new System.Drawing.Size(35, 35);
-            this.prod_BRemove.TabIndex = 3;
-            this.prod_BRemove.Text = "X";
-            this.prod_BRemove.UseVisualStyleBackColor = false;
-            // 
-            // prod_LCant
-            // 
-            this.prod_LCant.AutoSize = true;
-            this.prod_LCant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prod_LCant.Location = new System.Drawing.Point(295, 14);
-            this.prod_LCant.Name = "prod_LCant";
-            this.prod_LCant.Size = new System.Drawing.Size(38, 16);
-            this.prod_LCant.TabIndex = 4;
-            this.prod_LCant.Text = "Cant:";
-            // 
-            // prod_TCant
-            // 
-            this.prod_TCant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(92)))), ((int)(((byte)(93)))));
-            this.prod_TCant.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.prod_TCant.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prod_TCant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(218)))), ((int)(((byte)(105)))));
-            this.prod_TCant.Location = new System.Drawing.Point(339, 11);
-            this.prod_TCant.Name = "prod_TCant";
-            this.prod_TCant.Size = new System.Drawing.Size(53, 22);
-            this.prod_TCant.TabIndex = 5;
-            this.prod_TCant.Text = "1";
-            this.prod_TCant.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // PanelProductos
             // 
             this.PanelProductos.AutoScroll = true;
             this.PanelProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.PanelProductos.Controls.Add(this.prod_Panel);
             this.PanelProductos.Location = new System.Drawing.Point(277, 101);
             this.PanelProductos.Name = "PanelProductos";
             this.PanelProductos.Size = new System.Drawing.Size(518, 349);
@@ -270,23 +201,291 @@ namespace Controlador
             this.tCodigo.Name = "tCodigo";
             this.tCodigo.Size = new System.Drawing.Size(437, 31);
             this.tCodigo.TabIndex = 12;
-            this.tCodigo.Text = "CÓDIGO PRODUCTO";
+            this.tCodigo.Text = "CODIGO PRODUCTO";
             this.tCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tCodigo.Enter += new System.EventHandler(this.tCodigo_Enter);
             // 
+            // btnEnter
+            // 
+            this.btnEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnEnter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEnter.FlatAppearance.BorderSize = 0;
+            this.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(166)))), ((int)(((byte)(41)))));
+            this.btnEnter.Location = new System.Drawing.Point(203, 428);
+            this.btnEnter.Name = "btnEnter";
+            this.btnEnter.Size = new System.Drawing.Size(47, 67);
+            this.btnEnter.TabIndex = 14;
+            this.btnEnter.Text = "↲";
+            this.btnEnter.UseVisualStyleBackColor = false;
+            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
+            // 
+            // notifPanel
+            // 
+            this.notifPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.notifPanel.Controls.Add(this.notifIcon);
+            this.notifPanel.Controls.Add(this.notifCloseBtn);
+            this.notifPanel.Controls.Add(this.notifLabel);
+            this.notifPanel.Location = new System.Drawing.Point(384, 264);
+            this.notifPanel.Name = "notifPanel";
+            this.notifPanel.Size = new System.Drawing.Size(310, 33);
+            this.notifPanel.TabIndex = 15;
+            this.notifPanel.Visible = false;
+            // 
+            // notifIcon
+            // 
+            this.notifIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.notifIcon.ForeColor = System.Drawing.Color.LimeGreen;
+            this.notifIcon.IconChar = FontAwesome.Sharp.IconChar.ExclamationTriangle;
+            this.notifIcon.IconColor = System.Drawing.Color.LimeGreen;
+            this.notifIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.notifIcon.IconSize = 36;
+            this.notifIcon.Location = new System.Drawing.Point(8, 1);
+            this.notifIcon.Name = "notifIcon";
+            this.notifIcon.Size = new System.Drawing.Size(32, 32);
+            this.notifIcon.TabIndex = 3;
+            this.notifIcon.TabStop = false;
+            // 
+            // notifCloseBtn
+            // 
+            this.notifCloseBtn.BackColor = System.Drawing.Color.Transparent;
+            this.notifCloseBtn.FlatAppearance.BorderSize = 0;
+            this.notifCloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.notifCloseBtn.Location = new System.Drawing.Point(286, -6);
+            this.notifCloseBtn.Name = "notifCloseBtn";
+            this.notifCloseBtn.Size = new System.Drawing.Size(30, 27);
+            this.notifCloseBtn.TabIndex = 2;
+            this.notifCloseBtn.Text = "x";
+            this.notifCloseBtn.UseVisualStyleBackColor = false;
+            this.notifCloseBtn.Click += new System.EventHandler(this.notifCloseBtn_Click);
+            // 
+            // notifLabel
+            // 
+            this.notifLabel.AutoSize = true;
+            this.notifLabel.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notifLabel.Location = new System.Drawing.Point(46, 8);
+            this.notifLabel.Name = "notifLabel";
+            this.notifLabel.Size = new System.Drawing.Size(189, 15);
+            this.notifLabel.TabIndex = 0;
+            this.notifLabel.Text = "No se encontró el producto.";
+            // 
+            // panelTotales
+            // 
+            this.panelTotales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.panelTotales.Controls.Add(this.lIVA);
+            this.panelTotales.Controls.Add(this.lSubtotal);
+            this.panelTotales.Controls.Add(this.lblIVA);
+            this.panelTotales.Controls.Add(this.lblSubtotal);
+            this.panelTotales.Controls.Add(this.lTotal);
+            this.panelTotales.Controls.Add(this.lblTotal);
+            this.panelTotales.Location = new System.Drawing.Point(277, 456);
+            this.panelTotales.Name = "panelTotales";
+            this.panelTotales.Size = new System.Drawing.Size(518, 62);
+            this.panelTotales.TabIndex = 16;
+            // 
+            // lIVA
+            // 
+            this.lIVA.AutoSize = true;
+            this.lIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lIVA.Location = new System.Drawing.Point(377, 33);
+            this.lIVA.Name = "lIVA";
+            this.lIVA.Size = new System.Drawing.Size(43, 15);
+            this.lIVA.TabIndex = 5;
+            this.lIVA.Text = "$0.00";
+            // 
+            // lSubtotal
+            // 
+            this.lSubtotal.AutoSize = true;
+            this.lSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lSubtotal.Location = new System.Drawing.Point(377, 14);
+            this.lSubtotal.Name = "lSubtotal";
+            this.lSubtotal.Size = new System.Drawing.Size(43, 15);
+            this.lSubtotal.TabIndex = 4;
+            this.lSubtotal.Text = "$0.00";
+            // 
+            // lblIVA
+            // 
+            this.lblIVA.AutoSize = true;
+            this.lblIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIVA.Location = new System.Drawing.Point(294, 33);
+            this.lblIVA.Name = "lblIVA";
+            this.lblIVA.Size = new System.Drawing.Size(63, 15);
+            this.lblIVA.TabIndex = 3;
+            this.lblIVA.Text = "IVA 16%:";
+            // 
+            // lblSubtotal
+            // 
+            this.lblSubtotal.AutoSize = true;
+            this.lblSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtotal.Location = new System.Drawing.Point(294, 14);
+            this.lblSubtotal.Name = "lblSubtotal";
+            this.lblSubtotal.Size = new System.Drawing.Size(64, 15);
+            this.lblSubtotal.TabIndex = 2;
+            this.lblSubtotal.Text = "Subtotal:";
+            // 
+            // lTotal
+            // 
+            this.lTotal.AutoSize = true;
+            this.lTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTotal.Location = new System.Drawing.Point(1, 21);
+            this.lTotal.Name = "lTotal";
+            this.lTotal.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lTotal.Size = new System.Drawing.Size(108, 39);
+            this.lTotal.TabIndex = 1;
+            this.lTotal.Text = "$0.00";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(5, 5);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(57, 16);
+            this.lblTotal.TabIndex = 0;
+            this.lblTotal.Text = "TOTAL";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.panel2.Controls.Add(this.btnReports);
+            this.panel2.Controls.Add(this.btnSell);
+            this.panel2.Controls.Add(this.btnPrintTicket);
+            this.panel2.Controls.Add(this.btnSearch);
+            this.panel2.Controls.Add(this.btnClearCart);
+            this.panel2.Controls.Add(this.btnInventory);
+            this.panel2.Controls.Add(this.btnUsers);
+            this.panel2.Location = new System.Drawing.Point(801, 308);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(207, 210);
+            this.panel2.TabIndex = 17;
+            // 
+            // btnReports
+            // 
+            this.btnReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnReports.FlatAppearance.BorderSize = 0;
+            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReports.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
+            this.btnReports.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.btnReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReports.IconSize = 36;
+            this.btnReports.Location = new System.Drawing.Point(143, 70);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(51, 45);
+            this.btnReports.TabIndex = 22;
+            this.btnReports.UseVisualStyleBackColor = false;
+            // 
+            // btnSell
+            // 
+            this.btnSell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.btnSell.FlatAppearance.BorderSize = 0;
+            this.btnSell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSell.Font = new System.Drawing.Font("MS PGothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnSell.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
+            this.btnSell.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnSell.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSell.IconSize = 36;
+            this.btnSell.Location = new System.Drawing.Point(11, 156);
+            this.btnSell.Name = "btnSell";
+            this.btnSell.Size = new System.Drawing.Size(184, 45);
+            this.btnSell.TabIndex = 21;
+            this.btnSell.Text = "VENDER";
+            this.btnSell.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSell.UseVisualStyleBackColor = false;
+            // 
+            // btnPrintTicket
+            // 
+            this.btnPrintTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnPrintTicket.FlatAppearance.BorderSize = 0;
+            this.btnPrintTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrintTicket.IconChar = FontAwesome.Sharp.IconChar.Receipt;
+            this.btnPrintTicket.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.btnPrintTicket.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPrintTicket.IconSize = 36;
+            this.btnPrintTicket.Location = new System.Drawing.Point(77, 70);
+            this.btnPrintTicket.Name = "btnPrintTicket";
+            this.btnPrintTicket.Size = new System.Drawing.Size(51, 45);
+            this.btnPrintTicket.TabIndex = 20;
+            this.btnPrintTicket.UseVisualStyleBackColor = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSearch.IconSize = 36;
+            this.btnSearch.Location = new System.Drawing.Point(143, 10);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(51, 45);
+            this.btnSearch.TabIndex = 19;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // btnClearCart
+            // 
+            this.btnClearCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnClearCart.FlatAppearance.BorderSize = 0;
+            this.btnClearCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearCart.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnClearCart.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.btnClearCart.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnClearCart.IconSize = 36;
+            this.btnClearCart.Location = new System.Drawing.Point(10, 70);
+            this.btnClearCart.Name = "btnClearCart";
+            this.btnClearCart.Size = new System.Drawing.Size(51, 45);
+            this.btnClearCart.TabIndex = 18;
+            this.btnClearCart.UseVisualStyleBackColor = false;
+            this.btnClearCart.Click += new System.EventHandler(this.btnClearCart_Click);
+            // 
+            // btnInventory
+            // 
+            this.btnInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnInventory.FlatAppearance.BorderSize = 0;
+            this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventory.IconChar = FontAwesome.Sharp.IconChar.Boxes;
+            this.btnInventory.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.btnInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnInventory.IconSize = 36;
+            this.btnInventory.Location = new System.Drawing.Point(77, 10);
+            this.btnInventory.Name = "btnInventory";
+            this.btnInventory.Size = new System.Drawing.Size(51, 45);
+            this.btnInventory.TabIndex = 17;
+            this.btnInventory.UseVisualStyleBackColor = false;
+            // 
+            // btnUsers
+            // 
+            this.btnUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnUsers.FlatAppearance.BorderSize = 0;
+            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsers.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnUsers.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.btnUsers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnUsers.IconSize = 36;
+            this.btnUsers.Location = new System.Drawing.Point(10, 10);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Size = new System.Drawing.Size(51, 45);
+            this.btnUsers.TabIndex = 16;
+            this.btnUsers.UseVisualStyleBackColor = false;
+            // 
             // btnAgregar
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(92)))), ((int)(((byte)(93)))));
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(211)))), ((int)(((byte)(67)))));
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(218)))), ((int)(((byte)(105)))));
+            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnAgregar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(53)))), ((int)(((byte)(58)))));
+            this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregar.IconSize = 30;
             this.btnAgregar.Location = new System.Drawing.Point(720, 64);
             this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.btnAgregar.Size = new System.Drawing.Size(75, 31);
-            this.btnAgregar.TabIndex = 13;
-            this.btnAgregar.Text = "+";
+            this.btnAgregar.TabIndex = 23;
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // home
             // 
@@ -295,21 +494,29 @@ namespace Controlador
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(207)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1020, 551);
             this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelTotales);
+            this.Controls.Add(this.notifPanel);
+            this.Controls.Add(this.btnEnter);
             this.Controls.Add(this.tCodigo);
             this.Controls.Add(this.PanelProductos);
             this.Controls.Add(this.panelCalculadora);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.home_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
-            this.prod_Panel.ResumeLayout(false);
-            this.prod_Panel.PerformLayout();
-            this.PanelProductos.ResumeLayout(false);
+            this.notifPanel.ResumeLayout(false);
+            this.notifPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.notifIcon)).EndInit();
+            this.panelTotales.ResumeLayout(false);
+            this.panelTotales.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,15 +534,28 @@ namespace Controlador
         private System.Windows.Forms.Label lNombreT;
         private System.Windows.Forms.Timer clock;
         private System.Windows.Forms.Panel panelCalculadora;
-        private System.Windows.Forms.Panel prod_Panel;
-        private System.Windows.Forms.TextBox prod_TCant;
-        private System.Windows.Forms.Label prod_LCant;
-        private System.Windows.Forms.Button prod_BRemove;
-        private System.Windows.Forms.Button prod_BAdd;
-        private System.Windows.Forms.Label prod_LPrice;
-        private System.Windows.Forms.Label prod_LName;
         private System.Windows.Forms.FlowLayoutPanel PanelProductos;
         private System.Windows.Forms.TextBox tCodigo;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnEnter;
+        private System.Windows.Forms.Panel notifPanel;
+        private System.Windows.Forms.Label notifLabel;
+        private System.Windows.Forms.Button notifCloseBtn;
+        private System.Windows.Forms.Panel panelTotales;
+        private System.Windows.Forms.Label lIVA;
+        private System.Windows.Forms.Label lSubtotal;
+        private System.Windows.Forms.Label lblIVA;
+        private System.Windows.Forms.Label lblSubtotal;
+        private System.Windows.Forms.Label lTotal;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Panel panel2;
+        private FontAwesome.Sharp.IconButton btnPrintTicket;
+        private FontAwesome.Sharp.IconButton btnSearch;
+        private FontAwesome.Sharp.IconButton btnClearCart;
+        private FontAwesome.Sharp.IconButton btnInventory;
+        private FontAwesome.Sharp.IconButton btnUsers;
+        private FontAwesome.Sharp.IconButton btnSell;
+        private FontAwesome.Sharp.IconButton btnReports;
+        private FontAwesome.Sharp.IconButton btnAgregar;
+        private FontAwesome.Sharp.IconPictureBox notifIcon;
     }
 }

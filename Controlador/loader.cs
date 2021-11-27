@@ -9,13 +9,10 @@ namespace Vista
     public partial class loader : Form
     {
         private login vLogin;
-        private DataSet productos;
         public loader()
         {
             InitializeComponent();
-            string query = string.Format("SELECT * FROM Productos");
-            DataSet productos = Biblioteca.herramientas(query);
-            vLogin = new login(productos);
+            vLogin = new login();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

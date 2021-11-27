@@ -9,7 +9,6 @@ namespace Controlador
     public partial class login : Form
     {
         home vHome;
-        DataSet productos;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         public static extern IntPtr CreateRoundRectRgn
@@ -21,10 +20,9 @@ namespace Controlador
             int nWidthEllipse,
             int nHeightEllipse
         );
-        public login(DataSet productos)
+        public login()
         {
             InitializeComponent();
-            this.productos = productos;
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
@@ -49,7 +47,7 @@ namespace Controlador
                 if (username == tUser.Text.Trim() && password == tPass.Text.Trim())
                 {
                     lError.Visible = false;
-                    vHome = new home(rol, id, connect, productos);
+                    vHome = new home(rol, id, connect);
                     this.Hide();
                     vHome.ShowDialog();
                     this.Show();
@@ -65,28 +63,6 @@ namespace Controlador
                 Console.WriteLine("[Consola]: Ocurrió un error: " + error.Message);
                 lError.Visible = true;
             }
-            /*if (tUser.Text == "admin" && tPass.Text == "admin")
-            {
-                lError.Visible = false;
-                vHome = new home(1); //1 = Admin | 2 = Vendedor
-                this.Hide();
-                vHome.ShowDialog();
-                this.Show();
-                clearFields();
-            }
-            else if(tUser.Text == "vendedor" && tPass.Text == "vendedor")
-            {
-                lError.Visible = false;
-                vHome = new home(2);
-                this.Hide();
-                vHome.ShowDialog();
-                this.Show();
-                clearFields();
-            }
-            else
-            {
-                lError.Visible = true;
-            }*/
         }
 
         private void clearFields()

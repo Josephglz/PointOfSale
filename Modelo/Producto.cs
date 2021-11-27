@@ -10,24 +10,24 @@ namespace Modelo
     {
         private int idProducto;
         private string nombre;
-        private double precio;
+        private float precio;
         private int categoria;
         private int stock;
-        private bool perm;
+        private int modo;
         /*=========== [ CONSTRUCTOR ] ===========*/
 
         public Producto()
         {
         }
 
-        public Producto(int idProducto, string nombre, double precio, int categoria, int stock, bool perm)
+        public Producto(int idProducto, string nombre, float precio, int categoria, int stock, int modo)
         {
             this.idProducto = idProducto;
             this.nombre = nombre;
             this.precio = precio;
             this.categoria = categoria;
             this.stock = stock;
-            this.perm = perm;
+            this.modo = modo;
         }
 
         /*=========== [ SETTERS ] ===========*/
@@ -41,7 +41,7 @@ namespace Modelo
             this.nombre = nombre;
         }
 
-        public void setPrecio(double precio)
+        public void setPrecio(float precio)
         {
             this.precio = precio;
         }
@@ -56,9 +56,9 @@ namespace Modelo
             this.stock = stock;
         }
 
-        public void setPerm(bool perm)
+        public void setPerm(int modo)
         {
-            this.perm = perm;
+            this.modo = modo;
         }
 
         /*=========== [ GETTERS ] ===========*/
@@ -72,7 +72,7 @@ namespace Modelo
             return nombre;
         }
 
-        public double getPrecio()
+        public float getPrecio()
         {
             return precio;
         }
@@ -87,21 +87,21 @@ namespace Modelo
             return stock;
         }
 
-        public bool getPerm()
+        public int getPerm()
         {
-            return perm;
+            return modo;
         }
 
         /*=========== [ TOSTRING ] ===========*/
         public override string ToString()
         {
-            return "\n_________________________" +
-            "ID Producto = " + idProducto +
-            "Nombre = " + nombre +
-            "Precio = " + precio +
-            "Categoria = " + categoria +
-            "Stock = " + stock +
-            "Permiso = " + perm;
+            return "\n_________________________\n" +
+            "ID Producto = " + idProducto + "\n" +
+            "Nombre = " + nombre + "\n" +
+            "Precio = " + precio + "\n" +
+            "Categoria = " + categoria + "\n" +
+            "Stock = " + stock + "\n" +
+            "Modo = " + modo;
         }
     }
 }

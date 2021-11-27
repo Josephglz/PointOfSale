@@ -16,6 +16,11 @@ namespace Controlador
             InitializeComponent();
         }
 
+        public string getValueCalculator
+        {
+            get { return tNumeros.Text; }
+        }
+
         private void calculadora_Load(object sender, EventArgs e)
         {
             tNumeros.Text = "";
@@ -87,11 +92,6 @@ namespace Controlador
         private void btnClear_Click(object sender, EventArgs e)
         {
             tNumeros.Text = "";
-        }
-
-        private void btnEnter_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
