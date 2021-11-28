@@ -60,7 +60,7 @@ namespace Controlador
             }
             catch (Exception error)
             {
-                Console.WriteLine("[Consola]: Ocurrió un error: " + error.Message);
+                Console.WriteLine("[Consola]: Ocurrió un error: " + error);
                 lError.Visible = true;
             }
         }
@@ -69,6 +69,20 @@ namespace Controlador
         {
             tUser.Text = "";
             tPass.Text = "";
+        }
+
+        private void seePass_Click(object sender, EventArgs e)
+        {
+            if (seePass.IconChar == FontAwesome.Sharp.IconChar.Eye)
+            {
+                tPass.PasswordChar = '\0';
+                seePass.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+            }
+            else if(seePass.IconChar == FontAwesome.Sharp.IconChar.EyeSlash)
+            {
+                tPass.PasswordChar = '•';
+                seePass.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            }
         }
     }
 }

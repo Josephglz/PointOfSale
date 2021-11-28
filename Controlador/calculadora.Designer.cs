@@ -44,6 +44,9 @@ namespace Controlador
             this.btn0 = new System.Windows.Forms.Button();
             this.btnComa = new System.Windows.Forms.Button();
             this.tNumeros = new System.Windows.Forms.TextBox();
+            this.btnDiv = new System.Windows.Forms.Button();
+            this.btnSuma = new System.Windows.Forms.Button();
+            this.btnMenos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn7
@@ -118,7 +121,7 @@ namespace Controlador
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(166)))), ((int)(((byte)(41)))));
-            this.btnClear.Location = new System.Drawing.Point(192, 107);
+            this.btnClear.Location = new System.Drawing.Point(137, 189);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(47, 26);
             this.btnClear.TabIndex = 7;
@@ -230,9 +233,9 @@ namespace Controlador
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn0.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(166)))), ((int)(((byte)(41)))));
-            this.btn0.Location = new System.Drawing.Point(13, 191);
+            this.btn0.Location = new System.Drawing.Point(13, 189);
             this.btn0.Name = "btn0";
-            this.btn0.Size = new System.Drawing.Size(109, 26);
+            this.btn0.Size = new System.Drawing.Size(47, 26);
             this.btn0.TabIndex = 12;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = false;
@@ -246,7 +249,7 @@ namespace Controlador
             this.btnComa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(166)))), ((int)(((byte)(41)))));
-            this.btnComa.Location = new System.Drawing.Point(137, 191);
+            this.btnComa.Location = new System.Drawing.Point(75, 189);
             this.btnComa.Name = "btnComa";
             this.btnComa.Size = new System.Drawing.Size(47, 26);
             this.btnComa.TabIndex = 13;
@@ -269,12 +272,61 @@ namespace Controlador
             this.tNumeros.TabIndex = 14;
             this.tNumeros.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // btnDiv
+            // 
+            this.btnDiv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnDiv.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDiv.FlatAppearance.BorderSize = 0;
+            this.btnDiv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(166)))), ((int)(((byte)(41)))));
+            this.btnDiv.Location = new System.Drawing.Point(192, 187);
+            this.btnDiv.Name = "btnDiv";
+            this.btnDiv.Size = new System.Drawing.Size(47, 26);
+            this.btnDiv.TabIndex = 15;
+            this.btnDiv.Text = "÷";
+            this.btnDiv.UseVisualStyleBackColor = false;
+            // 
+            // btnSuma
+            // 
+            this.btnSuma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnSuma.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSuma.FlatAppearance.BorderSize = 0;
+            this.btnSuma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(166)))), ((int)(((byte)(41)))));
+            this.btnSuma.Location = new System.Drawing.Point(192, 107);
+            this.btnSuma.Name = "btnSuma";
+            this.btnSuma.Size = new System.Drawing.Size(47, 26);
+            this.btnSuma.TabIndex = 16;
+            this.btnSuma.Text = "+";
+            this.btnSuma.UseVisualStyleBackColor = false;
+            this.btnSuma.Click += new System.EventHandler(this.btnSuma_Click);
+            // 
+            // btnMenos
+            // 
+            this.btnMenos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnMenos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenos.FlatAppearance.BorderSize = 0;
+            this.btnMenos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(166)))), ((int)(((byte)(41)))));
+            this.btnMenos.Location = new System.Drawing.Point(192, 150);
+            this.btnMenos.Name = "btnMenos";
+            this.btnMenos.Size = new System.Drawing.Size(47, 26);
+            this.btnMenos.TabIndex = 17;
+            this.btnMenos.Text = "-";
+            this.btnMenos.UseVisualStyleBackColor = false;
+            // 
             // calculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(250, 240);
+            this.Controls.Add(this.btnMenos);
+            this.Controls.Add(this.btnSuma);
+            this.Controls.Add(this.btnDiv);
             this.Controls.Add(this.tNumeros);
             this.Controls.Add(this.btnComa);
             this.Controls.Add(this.btn0);
@@ -316,5 +368,8 @@ namespace Controlador
         private System.Windows.Forms.Button btn0;
         private System.Windows.Forms.Button btnComa;
         private System.Windows.Forms.TextBox tNumeros;
+        private System.Windows.Forms.Button btnDiv;
+        private System.Windows.Forms.Button btnSuma;
+        private System.Windows.Forms.Button btnMenos;
     }
 }

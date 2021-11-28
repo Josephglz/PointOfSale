@@ -45,7 +45,6 @@ namespace Controlador
             this.panelCalculadora = new System.Windows.Forms.Panel();
             this.PanelProductos = new System.Windows.Forms.FlowLayoutPanel();
             this.tCodigo = new System.Windows.Forms.TextBox();
-            this.btnEnter = new System.Windows.Forms.Button();
             this.notifPanel = new System.Windows.Forms.Panel();
             this.notifIcon = new FontAwesome.Sharp.IconPictureBox();
             this.notifCloseBtn = new System.Windows.Forms.Button();
@@ -57,21 +56,29 @@ namespace Controlador
             this.lblSubtotal = new System.Windows.Forms.Label();
             this.lTotal = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnReports = new FontAwesome.Sharp.IconButton();
-            this.btnSell = new FontAwesome.Sharp.IconButton();
-            this.btnPrintTicket = new FontAwesome.Sharp.IconButton();
-            this.btnSearch = new FontAwesome.Sharp.IconButton();
-            this.btnClearCart = new FontAwesome.Sharp.IconButton();
-            this.btnInventory = new FontAwesome.Sharp.IconButton();
-            this.btnUsers = new FontAwesome.Sharp.IconButton();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
+            this.prevPanel = new System.Windows.Forms.Panel();
+            this.prevCode = new System.Windows.Forms.Label();
+            this.prevPrice = new System.Windows.Forms.Label();
+            this.prevName = new System.Windows.Forms.Label();
+            this.prevCant = new System.Windows.Forms.Label();
+            this.prevImage = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnReports = new FontAwesome.Sharp.IconButton();
+            this.btnTicket = new FontAwesome.Sharp.IconButton();
+            this.btnTrash = new FontAwesome.Sharp.IconButton();
+            this.btnUsers = new FontAwesome.Sharp.IconButton();
+            this.btnInventory = new FontAwesome.Sharp.IconButton();
+            this.btnSearch = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             this.notifPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.notifIcon)).BeginInit();
             this.panelTotales.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.prevPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prevImage)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lNombre
@@ -131,11 +138,11 @@ namespace Controlador
             this.lReloj.AutoSize = true;
             this.lReloj.Font = new System.Drawing.Font("Dubai", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lReloj.ForeColor = System.Drawing.Color.White;
-            this.lReloj.Location = new System.Drawing.Point(843, 13);
+            this.lReloj.Location = new System.Drawing.Point(825, 13);
             this.lReloj.Name = "lReloj";
-            this.lReloj.Size = new System.Drawing.Size(86, 45);
+            this.lReloj.Size = new System.Drawing.Size(122, 45);
             this.lReloj.TabIndex = 11;
-            this.lReloj.Text = "00:00";
+            this.lReloj.Text = "00:00:00";
             // 
             // lNombreT
             // 
@@ -204,32 +211,19 @@ namespace Controlador
             this.tCodigo.Text = "CODIGO PRODUCTO";
             this.tCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tCodigo.Enter += new System.EventHandler(this.tCodigo_Enter);
-            // 
-            // btnEnter
-            // 
-            this.btnEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.btnEnter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEnter.FlatAppearance.BorderSize = 0;
-            this.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(166)))), ((int)(((byte)(41)))));
-            this.btnEnter.Location = new System.Drawing.Point(203, 428);
-            this.btnEnter.Name = "btnEnter";
-            this.btnEnter.Size = new System.Drawing.Size(47, 67);
-            this.btnEnter.TabIndex = 14;
-            this.btnEnter.Text = "↲";
-            this.btnEnter.UseVisualStyleBackColor = false;
-            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
+            this.tCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tCodigo_KeyPress);
+            this.tCodigo.Leave += new System.EventHandler(this.tCodigo_Leave);
             // 
             // notifPanel
             // 
+            this.notifPanel.AutoSize = true;
             this.notifPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
             this.notifPanel.Controls.Add(this.notifIcon);
             this.notifPanel.Controls.Add(this.notifCloseBtn);
             this.notifPanel.Controls.Add(this.notifLabel);
             this.notifPanel.Location = new System.Drawing.Point(384, 264);
             this.notifPanel.Name = "notifPanel";
-            this.notifPanel.Size = new System.Drawing.Size(310, 33);
+            this.notifPanel.Size = new System.Drawing.Size(310, 36);
             this.notifPanel.TabIndex = 15;
             this.notifPanel.Visible = false;
             // 
@@ -250,11 +244,14 @@ namespace Controlador
             // notifCloseBtn
             // 
             this.notifCloseBtn.BackColor = System.Drawing.Color.Transparent;
+            this.notifCloseBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.notifCloseBtn.FlatAppearance.BorderSize = 0;
+            this.notifCloseBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.notifCloseBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.notifCloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.notifCloseBtn.Location = new System.Drawing.Point(286, -6);
+            this.notifCloseBtn.Location = new System.Drawing.Point(280, 0);
             this.notifCloseBtn.Name = "notifCloseBtn";
-            this.notifCloseBtn.Size = new System.Drawing.Size(30, 27);
+            this.notifCloseBtn.Size = new System.Drawing.Size(30, 36);
             this.notifCloseBtn.TabIndex = 2;
             this.notifCloseBtn.Text = "x";
             this.notifCloseBtn.UseVisualStyleBackColor = false;
@@ -345,131 +342,6 @@ namespace Controlador
             this.lblTotal.TabIndex = 0;
             this.lblTotal.Text = "TOTAL";
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.panel2.Controls.Add(this.btnReports);
-            this.panel2.Controls.Add(this.btnSell);
-            this.panel2.Controls.Add(this.btnPrintTicket);
-            this.panel2.Controls.Add(this.btnSearch);
-            this.panel2.Controls.Add(this.btnClearCart);
-            this.panel2.Controls.Add(this.btnInventory);
-            this.panel2.Controls.Add(this.btnUsers);
-            this.panel2.Location = new System.Drawing.Point(801, 308);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(207, 210);
-            this.panel2.TabIndex = 17;
-            // 
-            // btnReports
-            // 
-            this.btnReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.btnReports.FlatAppearance.BorderSize = 0;
-            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReports.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
-            this.btnReports.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
-            this.btnReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnReports.IconSize = 36;
-            this.btnReports.Location = new System.Drawing.Point(143, 70);
-            this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(51, 45);
-            this.btnReports.TabIndex = 22;
-            this.btnReports.UseVisualStyleBackColor = false;
-            // 
-            // btnSell
-            // 
-            this.btnSell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
-            this.btnSell.FlatAppearance.BorderSize = 0;
-            this.btnSell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSell.Font = new System.Drawing.Font("MS PGothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.btnSell.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
-            this.btnSell.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.btnSell.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSell.IconSize = 36;
-            this.btnSell.Location = new System.Drawing.Point(11, 156);
-            this.btnSell.Name = "btnSell";
-            this.btnSell.Size = new System.Drawing.Size(184, 45);
-            this.btnSell.TabIndex = 21;
-            this.btnSell.Text = "VENDER";
-            this.btnSell.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSell.UseVisualStyleBackColor = false;
-            // 
-            // btnPrintTicket
-            // 
-            this.btnPrintTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.btnPrintTicket.FlatAppearance.BorderSize = 0;
-            this.btnPrintTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintTicket.IconChar = FontAwesome.Sharp.IconChar.Receipt;
-            this.btnPrintTicket.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
-            this.btnPrintTicket.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPrintTicket.IconSize = 36;
-            this.btnPrintTicket.Location = new System.Drawing.Point(77, 70);
-            this.btnPrintTicket.Name = "btnPrintTicket";
-            this.btnPrintTicket.Size = new System.Drawing.Size(51, 45);
-            this.btnPrintTicket.TabIndex = 20;
-            this.btnPrintTicket.UseVisualStyleBackColor = false;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
-            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSearch.IconSize = 36;
-            this.btnSearch.Location = new System.Drawing.Point(143, 10);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(51, 45);
-            this.btnSearch.TabIndex = 19;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // btnClearCart
-            // 
-            this.btnClearCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.btnClearCart.FlatAppearance.BorderSize = 0;
-            this.btnClearCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearCart.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnClearCart.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
-            this.btnClearCart.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClearCart.IconSize = 36;
-            this.btnClearCart.Location = new System.Drawing.Point(10, 70);
-            this.btnClearCart.Name = "btnClearCart";
-            this.btnClearCart.Size = new System.Drawing.Size(51, 45);
-            this.btnClearCart.TabIndex = 18;
-            this.btnClearCart.UseVisualStyleBackColor = false;
-            this.btnClearCart.Click += new System.EventHandler(this.btnClearCart_Click);
-            // 
-            // btnInventory
-            // 
-            this.btnInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.btnInventory.FlatAppearance.BorderSize = 0;
-            this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInventory.IconChar = FontAwesome.Sharp.IconChar.Boxes;
-            this.btnInventory.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
-            this.btnInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnInventory.IconSize = 36;
-            this.btnInventory.Location = new System.Drawing.Point(77, 10);
-            this.btnInventory.Name = "btnInventory";
-            this.btnInventory.Size = new System.Drawing.Size(51, 45);
-            this.btnInventory.TabIndex = 17;
-            this.btnInventory.UseVisualStyleBackColor = false;
-            // 
-            // btnUsers
-            // 
-            this.btnUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.btnUsers.FlatAppearance.BorderSize = 0;
-            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsers.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.btnUsers.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
-            this.btnUsers.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnUsers.IconSize = 36;
-            this.btnUsers.Location = new System.Drawing.Point(10, 10);
-            this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(51, 45);
-            this.btnUsers.TabIndex = 16;
-            this.btnUsers.UseVisualStyleBackColor = false;
-            // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(211)))), ((int)(((byte)(67)))));
@@ -487,17 +359,215 @@ namespace Controlador
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // prevPanel
+            // 
+            this.prevPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.prevPanel.Controls.Add(this.prevCode);
+            this.prevPanel.Controls.Add(this.prevPrice);
+            this.prevPanel.Controls.Add(this.prevName);
+            this.prevPanel.Controls.Add(this.prevCant);
+            this.prevPanel.Controls.Add(this.prevImage);
+            this.prevPanel.Location = new System.Drawing.Point(12, 64);
+            this.prevPanel.Name = "prevPanel";
+            this.prevPanel.Size = new System.Drawing.Size(250, 197);
+            this.prevPanel.TabIndex = 24;
+            // 
+            // prevCode
+            // 
+            this.prevCode.AutoSize = true;
+            this.prevCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
+            this.prevCode.Location = new System.Drawing.Point(7, 146);
+            this.prevCode.Name = "prevCode";
+            this.prevCode.Size = new System.Drawing.Size(0, 13);
+            this.prevCode.TabIndex = 4;
+            // 
+            // prevPrice
+            // 
+            this.prevPrice.AutoSize = true;
+            this.prevPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prevPrice.Location = new System.Drawing.Point(5, 166);
+            this.prevPrice.Name = "prevPrice";
+            this.prevPrice.Size = new System.Drawing.Size(0, 29);
+            this.prevPrice.TabIndex = 3;
+            // 
+            // prevName
+            // 
+            this.prevName.AutoSize = true;
+            this.prevName.BackColor = System.Drawing.Color.Transparent;
+            this.prevName.Font = new System.Drawing.Font("Dubai", 18F, System.Drawing.FontStyle.Bold);
+            this.prevName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.prevName.Location = new System.Drawing.Point(3, 114);
+            this.prevName.Name = "prevName";
+            this.prevName.Size = new System.Drawing.Size(0, 40);
+            this.prevName.TabIndex = 2;
+            // 
+            // prevCant
+            // 
+            this.prevCant.AutoSize = true;
+            this.prevCant.Font = new System.Drawing.Font("Dubai", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prevCant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(155)))), ((int)(((byte)(157)))));
+            this.prevCant.Location = new System.Drawing.Point(151, 37);
+            this.prevCant.Name = "prevCant";
+            this.prevCant.Size = new System.Drawing.Size(0, 49);
+            this.prevCant.TabIndex = 1;
+            // 
+            // prevImage
+            // 
+            this.prevImage.ErrorImage = null;
+            this.prevImage.ImageLocation = "";
+            this.prevImage.InitialImage = null;
+            this.prevImage.Location = new System.Drawing.Point(3, 3);
+            this.prevImage.Name = "prevImage";
+            this.prevImage.Size = new System.Drawing.Size(109, 107);
+            this.prevImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.prevImage.TabIndex = 0;
+            this.prevImage.TabStop = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.flowLayoutPanel1.Controls.Add(this.btnUsers);
+            this.flowLayoutPanel1.Controls.Add(this.btnInventory);
+            this.flowLayoutPanel1.Controls.Add(this.btnTicket);
+            this.flowLayoutPanel1.Controls.Add(this.btnSearch);
+            this.flowLayoutPanel1.Controls.Add(this.btnTrash);
+            this.flowLayoutPanel1.Controls.Add(this.btnReports);
+            this.flowLayoutPanel1.Controls.Add(this.iconButton2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(803, 307);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(207, 210);
+            this.flowLayoutPanel1.TabIndex = 25;
+            // 
+            // btnReports
+            // 
+            this.btnReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnReports.FlatAppearance.BorderSize = 0;
+            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReports.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
+            this.btnReports.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.btnReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReports.IconSize = 36;
+            this.btnReports.Location = new System.Drawing.Point(146, 60);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(8, 5, 10, 5);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(51, 45);
+            this.btnReports.TabIndex = 29;
+            this.btnReports.UseVisualStyleBackColor = false;
+            // 
+            // btnTicket
+            // 
+            this.btnTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnTicket.FlatAppearance.BorderSize = 0;
+            this.btnTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTicket.IconChar = FontAwesome.Sharp.IconChar.Receipt;
+            this.btnTicket.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.btnTicket.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTicket.IconSize = 36;
+            this.btnTicket.Location = new System.Drawing.Point(146, 5);
+            this.btnTicket.Margin = new System.Windows.Forms.Padding(8, 5, 10, 5);
+            this.btnTicket.Name = "btnTicket";
+            this.btnTicket.Size = new System.Drawing.Size(51, 45);
+            this.btnTicket.TabIndex = 27;
+            this.btnTicket.UseVisualStyleBackColor = false;
+            // 
+            // btnTrash
+            // 
+            this.btnTrash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnTrash.FlatAppearance.BorderSize = 0;
+            this.btnTrash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrash.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnTrash.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.btnTrash.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTrash.IconSize = 36;
+            this.btnTrash.Location = new System.Drawing.Point(77, 60);
+            this.btnTrash.Margin = new System.Windows.Forms.Padding(8, 5, 10, 5);
+            this.btnTrash.Name = "btnTrash";
+            this.btnTrash.Size = new System.Drawing.Size(51, 45);
+            this.btnTrash.TabIndex = 25;
+            this.btnTrash.UseVisualStyleBackColor = false;
+            this.btnTrash.Click += new System.EventHandler(this.btnTrash_Click);
+            // 
+            // btnUsers
+            // 
+            this.btnUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnUsers.FlatAppearance.BorderSize = 0;
+            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsers.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnUsers.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.btnUsers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnUsers.IconSize = 36;
+            this.btnUsers.Location = new System.Drawing.Point(8, 5);
+            this.btnUsers.Margin = new System.Windows.Forms.Padding(8, 5, 10, 5);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Size = new System.Drawing.Size(51, 45);
+            this.btnUsers.TabIndex = 23;
+            this.btnUsers.UseVisualStyleBackColor = false;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
+            // 
+            // btnInventory
+            // 
+            this.btnInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnInventory.FlatAppearance.BorderSize = 0;
+            this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventory.IconChar = FontAwesome.Sharp.IconChar.Boxes;
+            this.btnInventory.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.btnInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnInventory.IconSize = 36;
+            this.btnInventory.Location = new System.Drawing.Point(77, 5);
+            this.btnInventory.Margin = new System.Windows.Forms.Padding(8, 5, 10, 5);
+            this.btnInventory.Name = "btnInventory";
+            this.btnInventory.Size = new System.Drawing.Size(51, 45);
+            this.btnInventory.TabIndex = 24;
+            this.btnInventory.UseVisualStyleBackColor = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSearch.IconSize = 36;
+            this.btnSearch.Location = new System.Drawing.Point(8, 60);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(8, 5, 10, 5);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(51, 45);
+            this.btnSearch.TabIndex = 26;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Font = new System.Drawing.Font("MS PGothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
+            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 36;
+            this.iconButton2.Location = new System.Drawing.Point(10, 150);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(10, 40, 3, 3);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(184, 45);
+            this.iconButton2.TabIndex = 28;
+            this.iconButton2.Text = "VENDER";
+            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton2.UseVisualStyleBackColor = false;
+            // 
             // home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(207)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1020, 551);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.prevPanel);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelTotales);
             this.Controls.Add(this.notifPanel);
-            this.Controls.Add(this.btnEnter);
             this.Controls.Add(this.tCodigo);
             this.Controls.Add(this.PanelProductos);
             this.Controls.Add(this.panelCalculadora);
@@ -516,7 +586,10 @@ namespace Controlador
             ((System.ComponentModel.ISupportInitialize)(this.notifIcon)).EndInit();
             this.panelTotales.ResumeLayout(false);
             this.panelTotales.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.prevPanel.ResumeLayout(false);
+            this.prevPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prevImage)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -536,7 +609,6 @@ namespace Controlador
         private System.Windows.Forms.Panel panelCalculadora;
         private System.Windows.Forms.FlowLayoutPanel PanelProductos;
         private System.Windows.Forms.TextBox tCodigo;
-        private System.Windows.Forms.Button btnEnter;
         private System.Windows.Forms.Panel notifPanel;
         private System.Windows.Forms.Label notifLabel;
         private System.Windows.Forms.Button notifCloseBtn;
@@ -547,15 +619,21 @@ namespace Controlador
         private System.Windows.Forms.Label lblSubtotal;
         private System.Windows.Forms.Label lTotal;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconButton btnPrintTicket;
-        private FontAwesome.Sharp.IconButton btnSearch;
-        private FontAwesome.Sharp.IconButton btnClearCart;
-        private FontAwesome.Sharp.IconButton btnInventory;
-        private FontAwesome.Sharp.IconButton btnUsers;
-        private FontAwesome.Sharp.IconButton btnSell;
-        private FontAwesome.Sharp.IconButton btnReports;
         private FontAwesome.Sharp.IconButton btnAgregar;
         private FontAwesome.Sharp.IconPictureBox notifIcon;
+        private System.Windows.Forms.Panel prevPanel;
+        private System.Windows.Forms.Label prevCode;
+        private System.Windows.Forms.Label prevPrice;
+        private System.Windows.Forms.Label prevName;
+        private System.Windows.Forms.Label prevCant;
+        private System.Windows.Forms.PictureBox prevImage;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private FontAwesome.Sharp.IconButton btnReports;
+        private FontAwesome.Sharp.IconButton btnTicket;
+        private FontAwesome.Sharp.IconButton btnTrash;
+        private FontAwesome.Sharp.IconButton btnUsers;
+        private FontAwesome.Sharp.IconButton btnInventory;
+        private FontAwesome.Sharp.IconButton btnSearch;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }

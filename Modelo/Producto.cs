@@ -14,13 +14,14 @@ namespace Modelo
         private int categoria;
         private int stock;
         private int modo;
+        private string image;
         /*=========== [ CONSTRUCTOR ] ===========*/
 
         public Producto()
         {
         }
 
-        public Producto(int idProducto, string nombre, float precio, int categoria, int stock, int modo)
+        public Producto(int idProducto, string nombre, float precio, int categoria, int stock, int modo, string image)
         {
             this.idProducto = idProducto;
             this.nombre = nombre;
@@ -28,6 +29,7 @@ namespace Modelo
             this.categoria = categoria;
             this.stock = stock;
             this.modo = modo;
+            this.image = image;
         }
 
         /*=========== [ SETTERS ] ===========*/
@@ -61,6 +63,11 @@ namespace Modelo
             this.modo = modo;
         }
 
+        public void setImage(string image)
+        {
+            this.image = image;
+        }
+
         /*=========== [ GETTERS ] ===========*/
         public int getIdProducto()
         {
@@ -90,6 +97,11 @@ namespace Modelo
         public int getPerm()
         {
             return modo;
+        }
+
+        public string getImage()
+        {
+            return image;
         }
 
         /*=========== [ TOSTRING ] ===========*/

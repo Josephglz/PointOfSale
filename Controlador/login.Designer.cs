@@ -40,6 +40,7 @@ namespace Controlador
             this.bLogin = new System.Windows.Forms.Button();
             this.bExit = new System.Windows.Forms.Button();
             this.lError = new System.Windows.Forms.Label();
+            this.seePass = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -154,12 +155,29 @@ namespace Controlador
             this.lError.Text = "* Usuario y contraseña inválida.";
             this.lError.Visible = false;
             // 
+            // seePass
+            // 
+            this.seePass.BackColor = System.Drawing.Color.Transparent;
+            this.seePass.FlatAppearance.BorderSize = 0;
+            this.seePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.seePass.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.seePass.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(179)))), ((int)(((byte)(151)))));
+            this.seePass.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.seePass.IconSize = 30;
+            this.seePass.Location = new System.Drawing.Point(560, 174);
+            this.seePass.Name = "seePass";
+            this.seePass.Size = new System.Drawing.Size(28, 23);
+            this.seePass.TabIndex = 9;
+            this.seePass.UseVisualStyleBackColor = false;
+            this.seePass.Click += new System.EventHandler(this.seePass_Click);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(612, 275);
+            this.Controls.Add(this.seePass);
             this.Controls.Add(this.lError);
             this.Controls.Add(this.bExit);
             this.Controls.Add(this.bLogin);
@@ -193,5 +211,6 @@ namespace Controlador
         private System.Windows.Forms.Button bLogin;
         private System.Windows.Forms.Button bExit;
         private System.Windows.Forms.Label lError;
+        private FontAwesome.Sharp.IconButton seePass;
     }
 }

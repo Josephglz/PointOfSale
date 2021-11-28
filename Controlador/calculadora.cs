@@ -11,6 +11,8 @@ namespace Controlador
 {
     public partial class calculadora : Form
     {
+        private int num1;
+        private int res;
         public calculadora()
         {
             InitializeComponent();
@@ -92,6 +94,23 @@ namespace Controlador
         private void btnClear_Click(object sender, EventArgs e)
         {
             tNumeros.Text = "";
+        }
+
+        private void btnSuma_Click(object sender, EventArgs e)
+        {
+            if(tNumeros.Text != "")
+            {
+                if(num1 == 0)
+                {
+                    num1 = Convert.ToInt32(tNumeros.Text);
+                    res = 0;
+                }
+                else
+                {
+                    res = num1 + Convert.ToInt32(tNumeros.Text);
+                    tNumeros.Text = res.ToString();
+                }
+            }
         }
     }
 }
