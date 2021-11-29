@@ -65,7 +65,15 @@ namespace Controlador
             {
                 profilePicture.ImageLocation = image;
             }
-            lNombre.Text = nombre + " " + apellido;
+            string fName = nombre + " " + apellido;
+            if(fName.Length > 40)
+            {
+                lNombre.Text = fName.Substring(0, 40) + ".";
+            }
+            else
+            {
+                lNombre.Text = fName;
+            }
             AbrirForms<calculadora>();
         }
 

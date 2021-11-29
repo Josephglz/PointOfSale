@@ -89,10 +89,10 @@ namespace Controlador
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(300, 146);
+            this.label3.Font = new System.Drawing.Font("Poppins Light", 14.25F);
+            this.label3.Location = new System.Drawing.Point(297, 146);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 28);
+            this.label3.Size = new System.Drawing.Size(128, 34);
             this.label3.TabIndex = 3;
             this.label3.Text = "Contraseña";
             // 
