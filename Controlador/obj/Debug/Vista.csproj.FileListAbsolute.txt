@@ -16,3 +16,4 @@ E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\ControladorDLL.dll
 E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\ControladorDLL.pdb
 E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\FontAwesome.Sharp.dll
 E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Controlador.users.resources
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Controlador.inventario.resources

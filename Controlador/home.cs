@@ -467,5 +467,12 @@ namespace Controlador
             vUsers.ShowDialog();
             clock.Start();
         }
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            clock.Stop();
+            inventario vInventario = new inventario();
+            vInventario.ShowDialog();
+            clock.Start();
+        }
     }
 }

@@ -64,12 +64,12 @@ namespace Controlador
             this.prevCant = new System.Windows.Forms.Label();
             this.prevImage = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnReports = new FontAwesome.Sharp.IconButton();
-            this.btnTicket = new FontAwesome.Sharp.IconButton();
-            this.btnTrash = new FontAwesome.Sharp.IconButton();
             this.btnUsers = new FontAwesome.Sharp.IconButton();
             this.btnInventory = new FontAwesome.Sharp.IconButton();
+            this.btnTicket = new FontAwesome.Sharp.IconButton();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
+            this.btnTrash = new FontAwesome.Sharp.IconButton();
+            this.btnReports = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
@@ -439,55 +439,6 @@ namespace Controlador
             this.flowLayoutPanel1.Size = new System.Drawing.Size(207, 210);
             this.flowLayoutPanel1.TabIndex = 25;
             // 
-            // btnReports
-            // 
-            this.btnReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.btnReports.FlatAppearance.BorderSize = 0;
-            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReports.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
-            this.btnReports.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
-            this.btnReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnReports.IconSize = 36;
-            this.btnReports.Location = new System.Drawing.Point(146, 60);
-            this.btnReports.Margin = new System.Windows.Forms.Padding(8, 5, 10, 5);
-            this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(51, 45);
-            this.btnReports.TabIndex = 29;
-            this.btnReports.UseVisualStyleBackColor = false;
-            // 
-            // btnTicket
-            // 
-            this.btnTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.btnTicket.FlatAppearance.BorderSize = 0;
-            this.btnTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTicket.IconChar = FontAwesome.Sharp.IconChar.Receipt;
-            this.btnTicket.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
-            this.btnTicket.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTicket.IconSize = 36;
-            this.btnTicket.Location = new System.Drawing.Point(146, 5);
-            this.btnTicket.Margin = new System.Windows.Forms.Padding(8, 5, 10, 5);
-            this.btnTicket.Name = "btnTicket";
-            this.btnTicket.Size = new System.Drawing.Size(51, 45);
-            this.btnTicket.TabIndex = 27;
-            this.btnTicket.UseVisualStyleBackColor = false;
-            // 
-            // btnTrash
-            // 
-            this.btnTrash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.btnTrash.FlatAppearance.BorderSize = 0;
-            this.btnTrash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrash.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnTrash.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
-            this.btnTrash.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTrash.IconSize = 36;
-            this.btnTrash.Location = new System.Drawing.Point(77, 60);
-            this.btnTrash.Margin = new System.Windows.Forms.Padding(8, 5, 10, 5);
-            this.btnTrash.Name = "btnTrash";
-            this.btnTrash.Size = new System.Drawing.Size(51, 45);
-            this.btnTrash.TabIndex = 25;
-            this.btnTrash.UseVisualStyleBackColor = false;
-            this.btnTrash.Click += new System.EventHandler(this.btnTrash_Click);
-            // 
             // btnUsers
             // 
             this.btnUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
@@ -520,6 +471,23 @@ namespace Controlador
             this.btnInventory.Size = new System.Drawing.Size(51, 45);
             this.btnInventory.TabIndex = 24;
             this.btnInventory.UseVisualStyleBackColor = false;
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
+            // 
+            // btnTicket
+            // 
+            this.btnTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnTicket.FlatAppearance.BorderSize = 0;
+            this.btnTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTicket.IconChar = FontAwesome.Sharp.IconChar.Receipt;
+            this.btnTicket.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.btnTicket.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTicket.IconSize = 36;
+            this.btnTicket.Location = new System.Drawing.Point(146, 5);
+            this.btnTicket.Margin = new System.Windows.Forms.Padding(8, 5, 10, 5);
+            this.btnTicket.Name = "btnTicket";
+            this.btnTicket.Size = new System.Drawing.Size(51, 45);
+            this.btnTicket.TabIndex = 27;
+            this.btnTicket.UseVisualStyleBackColor = false;
             // 
             // btnSearch
             // 
@@ -536,6 +504,39 @@ namespace Controlador
             this.btnSearch.Size = new System.Drawing.Size(51, 45);
             this.btnSearch.TabIndex = 26;
             this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // btnTrash
+            // 
+            this.btnTrash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnTrash.FlatAppearance.BorderSize = 0;
+            this.btnTrash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrash.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnTrash.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.btnTrash.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTrash.IconSize = 36;
+            this.btnTrash.Location = new System.Drawing.Point(77, 60);
+            this.btnTrash.Margin = new System.Windows.Forms.Padding(8, 5, 10, 5);
+            this.btnTrash.Name = "btnTrash";
+            this.btnTrash.Size = new System.Drawing.Size(51, 45);
+            this.btnTrash.TabIndex = 25;
+            this.btnTrash.UseVisualStyleBackColor = false;
+            this.btnTrash.Click += new System.EventHandler(this.btnTrash_Click);
+            // 
+            // btnReports
+            // 
+            this.btnReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.btnReports.FlatAppearance.BorderSize = 0;
+            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReports.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
+            this.btnReports.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.btnReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReports.IconSize = 36;
+            this.btnReports.Location = new System.Drawing.Point(146, 60);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(8, 5, 10, 5);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(51, 45);
+            this.btnReports.TabIndex = 29;
+            this.btnReports.UseVisualStyleBackColor = false;
             // 
             // iconButton2
             // 
