@@ -12,7 +12,7 @@ namespace ControladorDLL
     {
         public static DataSet herramientas(string cmd)
         {
-            SqlConnection conexion = new SqlConnection(@"Data Source=LAPTOP-31Q7HJFR\SQLEXPRESS;Initial Catalog=puntodeVenta;Persist Security Info=True;User ID=sa;Password=df9dd6848c");
+            SqlConnection conexion = new SqlConnection(@"Data Source=LAPTOP-31Q7HJFR\SQLEXPRESS;Initial Catalog=puntodeVenta;Persist Security Info=True;User ID=sa;Password=prueba");
             conexion.Open();
 
             DataSet dll = new DataSet();

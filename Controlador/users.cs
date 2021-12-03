@@ -233,6 +233,7 @@ namespace Controlador
             {
                 this.Size = new Size(790, 300);
                 bUserAdd.Text = "Agregar";
+                bUserDelete.Text = "Eliminar";
                 bUserAdd.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
                 bUserModify.Enabled = true;
                 bUserDelete.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
@@ -294,6 +295,7 @@ namespace Controlador
 
                         this.Size = new Size(790, 300);
                         bUserAdd.Text = "Agregar";
+                        bUserDelete.Text = "Eliminar";
                         bUserAdd.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
                         bUserModify.Enabled = true;
                         bUserDelete.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
@@ -334,6 +336,7 @@ namespace Controlador
 
                         this.Size = new Size(790, 300);
                         bUserAdd.Text = "Agregar";
+                        bUserDelete.Text = "Eliminar";
                         bUserAdd.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
                         bUserModify.Enabled = true;
                         bUserDelete.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
