@@ -170,6 +170,7 @@ namespace Controlador
             {
                 queryProductos = Biblioteca.herramientas("SELECT * FROM Productos");
                 listaProductos = new List<Producto>();
+                listaProductos.Clear();
 
                 int id, categoria, stock, modo;
                 string nombre, image;
@@ -321,13 +322,14 @@ namespace Controlador
                         Prod_LPrice.Text = "$" + listaProductos.ElementAt(select).getPrecio();
                         Prod_LPrice.Tag = Prod_BRemove;
 
-                        Prod_LName.AutoSize = true;
+                        Prod_LName.AutoSize = false;
                         Prod_LName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                         Prod_LName.Location = new System.Drawing.Point(3, 5);
                         Prod_LName.Name = "prod_LName";
-                        Prod_LName.Size = new System.Drawing.Size(90, 16);
+                        Prod_LName.Size = new System.Drawing.Size(270, 16);
                         Prod_LName.TabIndex = 0;
                         Prod_LName.Text = listaProductos.ElementAt(select).getNombre();
+                        Prod_LName.AutoEllipsis = true;
                         Prod_LName.Tag = Prod_BRemove;
 
                         prod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(220)))), ((int)(((byte)(102)))));
@@ -470,9 +472,10 @@ namespace Controlador
         private void btnInventory_Click(object sender, EventArgs e)
         {
             clock.Stop();
-            inventario vInventario = new inventario();
+            inventario vInventario = new inventario(id_user);
             vInventario.ShowDialog();
             clock.Start();
+            loadProducts();
         }
     }
 }

@@ -29,11 +29,12 @@ namespace Controlador
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inventario));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lFecha = new System.Windows.Forms.Label();
             this.bExit = new System.Windows.Forms.Button();
@@ -42,13 +43,38 @@ namespace Controlador
             this.lRol = new System.Windows.Forms.Label();
             this.profilePicture = new System.Windows.Forms.PictureBox();
             this.lNombre = new System.Windows.Forms.Label();
-            this.userTable = new System.Windows.Forms.DataGridView();
-            this.bUserDelete = new FontAwesome.Sharp.IconButton();
-            this.bUserModify = new FontAwesome.Sharp.IconButton();
-            this.bUserAdd = new FontAwesome.Sharp.IconButton();
+            this.TablaProductos = new System.Windows.Forms.DataGridView();
+            this.bDelete = new FontAwesome.Sharp.IconButton();
+            this.bModify = new FontAwesome.Sharp.IconButton();
+            this.bAdd = new FontAwesome.Sharp.IconButton();
+            this.Clock = new System.Windows.Forms.Timer(this.components);
+            this.bCategoria = new FontAwesome.Sharp.IconButton();
+            this.bProducto = new FontAwesome.Sharp.IconButton();
+            this.tImagen = new System.Windows.Forms.TextBox();
+            this.lblImagen = new System.Windows.Forms.Label();
+            this.lblModo = new System.Windows.Forms.Label();
+            this.tStock = new System.Windows.Forms.TextBox();
+            this.lblStock = new System.Windows.Forms.Label();
+            this.t3 = new System.Windows.Forms.TextBox();
+            this.lblDos = new System.Windows.Forms.Label();
+            this.t2 = new System.Windows.Forms.TextBox();
+            this.tID = new System.Windows.Forms.TextBox();
+            this.lblUno = new System.Windows.Forms.Label();
+            this.lbl_Id = new System.Windows.Forms.Label();
+            this.lblDatos = new System.Windows.Forms.Label();
+            this.mod1 = new System.Windows.Forms.CheckBox();
+            this.mod2 = new System.Windows.Forms.CheckBox();
+            this.tCategoria = new System.Windows.Forms.TextBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.notifPanel = new System.Windows.Forms.Panel();
+            this.notifIcon = new FontAwesome.Sharp.IconPictureBox();
+            this.notifCloseBtn = new System.Windows.Forms.Button();
+            this.notifLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TablaProductos)).BeginInit();
+            this.notifPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.notifIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,7 +112,7 @@ namespace Controlador
             this.bExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bExit.Font = new System.Drawing.Font("Poppins Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bExit.ForeColor = System.Drawing.Color.White;
-            this.bExit.Location = new System.Drawing.Point(769, 1);
+            this.bExit.Location = new System.Drawing.Point(769, 0);
             this.bExit.Name = "bExit";
             this.bExit.Size = new System.Drawing.Size(31, 34);
             this.bExit.TabIndex = 15;
@@ -149,135 +175,419 @@ namespace Controlador
             this.lNombre.TabIndex = 0;
             this.lNombre.Text = "Nombre Apellido";
             // 
-            // userTable
+            // TablaProductos
             // 
-            this.userTable.AllowUserToAddRows = false;
-            this.userTable.AllowUserToDeleteRows = false;
-            this.userTable.AllowUserToResizeColumns = false;
-            this.userTable.AllowUserToResizeRows = false;
-            this.userTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.userTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.userTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.userTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.userTable.CausesValidation = false;
-            this.userTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.userTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Dubai", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.userTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.userTable.ColumnHeadersHeight = 30;
-            this.userTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.userTable.DefaultCellStyle = dataGridViewCellStyle6;
-            this.userTable.EnableHeadersVisualStyles = false;
-            this.userTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
-            this.userTable.Location = new System.Drawing.Point(12, 61);
-            this.userTable.MultiSelect = false;
-            this.userTable.Name = "userTable";
-            this.userTable.ReadOnly = true;
-            this.userTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.userTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Dubai", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.userTable.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.userTable.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.userTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.userTable.Size = new System.Drawing.Size(776, 167);
-            this.userTable.TabIndex = 19;
+            this.TablaProductos.AllowUserToAddRows = false;
+            this.TablaProductos.AllowUserToDeleteRows = false;
+            this.TablaProductos.AllowUserToResizeColumns = false;
+            this.TablaProductos.AllowUserToResizeRows = false;
+            this.TablaProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.TablaProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.TablaProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.TablaProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TablaProductos.CausesValidation = false;
+            this.TablaProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.TablaProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Dubai", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TablaProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.TablaProductos.ColumnHeadersHeight = 30;
+            this.TablaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TablaProductos.DefaultCellStyle = dataGridViewCellStyle18;
+            this.TablaProductos.EnableHeadersVisualStyles = false;
+            this.TablaProductos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.TablaProductos.Location = new System.Drawing.Point(12, 116);
+            this.TablaProductos.MultiSelect = false;
+            this.TablaProductos.Name = "TablaProductos";
+            this.TablaProductos.ReadOnly = true;
+            this.TablaProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TablaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Dubai", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
+            this.TablaProductos.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            this.TablaProductos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TablaProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.TablaProductos.Size = new System.Drawing.Size(776, 167);
+            this.TablaProductos.TabIndex = 19;
             // 
-            // bUserDelete
+            // bDelete
             // 
-            this.bUserDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
-            this.bUserDelete.FlatAppearance.BorderSize = 0;
-            this.bUserDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bUserDelete.Font = new System.Drawing.Font("Poppins Light", 0.1F);
-            this.bUserDelete.ForeColor = System.Drawing.Color.White;
-            this.bUserDelete.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
-            this.bUserDelete.IconColor = System.Drawing.Color.White;
-            this.bUserDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bUserDelete.IconSize = 35;
-            this.bUserDelete.Location = new System.Drawing.Point(527, 246);
-            this.bUserDelete.Name = "bUserDelete";
-            this.bUserDelete.Size = new System.Drawing.Size(127, 37);
-            this.bUserDelete.TabIndex = 24;
-            this.bUserDelete.Text = "Eliminar";
-            this.bUserDelete.UseVisualStyleBackColor = false;
+            this.bDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.bDelete.Enabled = false;
+            this.bDelete.FlatAppearance.BorderSize = 0;
+            this.bDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bDelete.Font = new System.Drawing.Font("Poppins Light", 0.1F);
+            this.bDelete.ForeColor = System.Drawing.Color.White;
+            this.bDelete.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.bDelete.IconColor = System.Drawing.Color.White;
+            this.bDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bDelete.IconSize = 30;
+            this.bDelete.Location = new System.Drawing.Point(527, 301);
+            this.bDelete.Name = "bDelete";
+            this.bDelete.Size = new System.Drawing.Size(127, 37);
+            this.bDelete.TabIndex = 24;
+            this.bDelete.Text = "Eliminar";
+            this.bDelete.UseVisualStyleBackColor = false;
             // 
-            // bUserModify
+            // bModify
             // 
-            this.bUserModify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.bUserModify.FlatAppearance.BorderSize = 0;
-            this.bUserModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bUserModify.Font = new System.Drawing.Font("Poppins Light", 0.1F);
-            this.bUserModify.ForeColor = System.Drawing.Color.White;
-            this.bUserModify.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
-            this.bUserModify.IconColor = System.Drawing.Color.White;
-            this.bUserModify.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bUserModify.IconSize = 35;
-            this.bUserModify.Location = new System.Drawing.Point(335, 246);
-            this.bUserModify.Name = "bUserModify";
-            this.bUserModify.Size = new System.Drawing.Size(127, 37);
-            this.bUserModify.TabIndex = 23;
-            this.bUserModify.Text = "Modificar";
-            this.bUserModify.UseVisualStyleBackColor = false;
+            this.bModify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.bModify.Enabled = false;
+            this.bModify.FlatAppearance.BorderSize = 0;
+            this.bModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bModify.Font = new System.Drawing.Font("Poppins Light", 0.1F);
+            this.bModify.ForeColor = System.Drawing.Color.White;
+            this.bModify.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.bModify.IconColor = System.Drawing.Color.White;
+            this.bModify.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bModify.IconSize = 35;
+            this.bModify.Location = new System.Drawing.Point(335, 301);
+            this.bModify.Name = "bModify";
+            this.bModify.Size = new System.Drawing.Size(127, 37);
+            this.bModify.TabIndex = 23;
+            this.bModify.Text = "Modificar";
+            this.bModify.UseVisualStyleBackColor = false;
             // 
-            // bUserAdd
+            // bAdd
             // 
-            this.bUserAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
-            this.bUserAdd.FlatAppearance.BorderSize = 0;
-            this.bUserAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bUserAdd.Font = new System.Drawing.Font("Poppins Light", 0.1F);
-            this.bUserAdd.ForeColor = System.Drawing.Color.White;
-            this.bUserAdd.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.bUserAdd.IconColor = System.Drawing.Color.White;
-            this.bUserAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bUserAdd.IconSize = 35;
-            this.bUserAdd.Location = new System.Drawing.Point(146, 246);
-            this.bUserAdd.Name = "bUserAdd";
-            this.bUserAdd.Size = new System.Drawing.Size(127, 37);
-            this.bUserAdd.TabIndex = 22;
-            this.bUserAdd.Text = "Agregar";
-            this.bUserAdd.UseVisualStyleBackColor = false;
+            this.bAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.bAdd.Enabled = false;
+            this.bAdd.FlatAppearance.BorderSize = 0;
+            this.bAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bAdd.Font = new System.Drawing.Font("Poppins Light", 0.1F);
+            this.bAdd.ForeColor = System.Drawing.Color.White;
+            this.bAdd.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.bAdd.IconColor = System.Drawing.Color.White;
+            this.bAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bAdd.IconSize = 35;
+            this.bAdd.Location = new System.Drawing.Point(146, 301);
+            this.bAdd.Name = "bAdd";
+            this.bAdd.Size = new System.Drawing.Size(127, 37);
+            this.bAdd.TabIndex = 22;
+            this.bAdd.Text = "Agregar";
+            this.bAdd.UseVisualStyleBackColor = false;
+            this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
+            // 
+            // Clock
+            // 
+            this.Clock.Enabled = true;
+            this.Clock.Interval = 1000;
+            this.Clock.Tick += new System.EventHandler(this.Clock_Tick);
+            // 
+            // bCategoria
+            // 
+            this.bCategoria.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.bCategoria.FlatAppearance.BorderSize = 0;
+            this.bCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bCategoria.Font = new System.Drawing.Font("Poppins Light", 12F);
+            this.bCategoria.ForeColor = System.Drawing.Color.White;
+            this.bCategoria.IconChar = FontAwesome.Sharp.IconChar.ThLarge;
+            this.bCategoria.IconColor = System.Drawing.Color.White;
+            this.bCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bCategoria.IconSize = 1;
+            this.bCategoria.Location = new System.Drawing.Point(210, 71);
+            this.bCategoria.Name = "bCategoria";
+            this.bCategoria.Size = new System.Drawing.Size(136, 30);
+            this.bCategoria.TabIndex = 25;
+            this.bCategoria.Text = "Categorías";
+            this.bCategoria.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bCategoria.UseVisualStyleBackColor = false;
+            this.bCategoria.Click += new System.EventHandler(this.bCategoria_Click);
+            // 
+            // bProducto
+            // 
+            this.bProducto.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.bProducto.FlatAppearance.BorderSize = 0;
+            this.bProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bProducto.Font = new System.Drawing.Font("Poppins Light", 12F);
+            this.bProducto.ForeColor = System.Drawing.Color.White;
+            this.bProducto.IconChar = FontAwesome.Sharp.IconChar.ThLarge;
+            this.bProducto.IconColor = System.Drawing.Color.White;
+            this.bProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bProducto.IconSize = 1;
+            this.bProducto.Location = new System.Drawing.Point(447, 71);
+            this.bProducto.Name = "bProducto";
+            this.bProducto.Size = new System.Drawing.Size(136, 30);
+            this.bProducto.TabIndex = 26;
+            this.bProducto.Text = "Productos";
+            this.bProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bProducto.UseVisualStyleBackColor = false;
+            this.bProducto.Click += new System.EventHandler(this.bProducto_Click);
+            // 
+            // tImagen
+            // 
+            this.tImagen.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tImagen.Location = new System.Drawing.Point(294, 538);
+            this.tImagen.Name = "tImagen";
+            this.tImagen.Size = new System.Drawing.Size(420, 23);
+            this.tImagen.TabIndex = 54;
+            // 
+            // lblImagen
+            // 
+            this.lblImagen.AutoSize = true;
+            this.lblImagen.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImagen.Location = new System.Drawing.Point(106, 535);
+            this.lblImagen.Name = "lblImagen";
+            this.lblImagen.Size = new System.Drawing.Size(182, 28);
+            this.lblImagen.TabIndex = 53;
+            this.lblImagen.Text = "Imagen del Producto:";
+            // 
+            // lblModo
+            // 
+            this.lblModo.AutoSize = true;
+            this.lblModo.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModo.Location = new System.Drawing.Point(444, 468);
+            this.lblModo.Name = "lblModo";
+            this.lblModo.Size = new System.Drawing.Size(59, 28);
+            this.lblModo.TabIndex = 51;
+            this.lblModo.Text = "Modo:";
+            // 
+            // tStock
+            // 
+            this.tStock.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tStock.Location = new System.Drawing.Point(566, 417);
+            this.tStock.Name = "tStock";
+            this.tStock.Size = new System.Drawing.Size(148, 23);
+            this.tStock.TabIndex = 50;
+            // 
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.Location = new System.Drawing.Point(444, 414);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(58, 28);
+            this.lblStock.TabIndex = 49;
+            this.lblStock.Text = "Stock:";
+            // 
+            // t3
+            // 
+            this.t3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            this.t3.Location = new System.Drawing.Point(203, 473);
+            this.t3.Name = "t3";
+            this.t3.Size = new System.Drawing.Size(180, 23);
+            this.t3.TabIndex = 46;
+            // 
+            // lblDos
+            // 
+            this.lblDos.AutoSize = true;
+            this.lblDos.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDos.Location = new System.Drawing.Point(33, 470);
+            this.lblDos.Name = "lblDos";
+            this.lblDos.Size = new System.Drawing.Size(64, 28);
+            this.lblDos.TabIndex = 45;
+            this.lblDos.Text = "Precio:";
+            // 
+            // t2
+            // 
+            this.t2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            this.t2.Location = new System.Drawing.Point(203, 445);
+            this.t2.Name = "t2";
+            this.t2.Size = new System.Drawing.Size(180, 23);
+            this.t2.TabIndex = 44;
+            // 
+            // tID
+            // 
+            this.tID.Enabled = false;
+            this.tID.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tID.Location = new System.Drawing.Point(203, 417);
+            this.tID.Name = "tID";
+            this.tID.ReadOnly = true;
+            this.tID.Size = new System.Drawing.Size(71, 23);
+            this.tID.TabIndex = 43;
+            // 
+            // lblUno
+            // 
+            this.lblUno.AutoSize = true;
+            this.lblUno.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUno.Location = new System.Drawing.Point(33, 442);
+            this.lblUno.Name = "lblUno";
+            this.lblUno.Size = new System.Drawing.Size(141, 28);
+            this.lblUno.TabIndex = 42;
+            this.lblUno.Text = "Nombre Opcion:";
+            // 
+            // lbl_Id
+            // 
+            this.lbl_Id.AutoSize = true;
+            this.lbl_Id.Font = new System.Drawing.Font("Poppins Light", 12F);
+            this.lbl_Id.Location = new System.Drawing.Point(33, 414);
+            this.lbl_Id.Name = "lbl_Id";
+            this.lbl_Id.Size = new System.Drawing.Size(92, 28);
+            this.lbl_Id.TabIndex = 41;
+            this.lbl_Id.Text = "ID Opcion:";
+            // 
+            // lblDatos
+            // 
+            this.lblDatos.BackColor = System.Drawing.Color.Transparent;
+            this.lblDatos.Font = new System.Drawing.Font("Dubai", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatos.Location = new System.Drawing.Point(4, 354);
+            this.lblDatos.Name = "lblDatos";
+            this.lblDatos.Size = new System.Drawing.Size(790, 45);
+            this.lblDatos.TabIndex = 40;
+            this.lblDatos.Text = "Datos del Producto";
+            this.lblDatos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // mod1
+            // 
+            this.mod1.AutoSize = true;
+            this.mod1.Font = new System.Drawing.Font("Poppins Light", 12F);
+            this.mod1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.mod1.Location = new System.Drawing.Point(548, 464);
+            this.mod1.Name = "mod1";
+            this.mod1.Size = new System.Drawing.Size(183, 32);
+            this.mod1.TabIndex = 55;
+            this.mod1.Text = "Mantener Producto";
+            this.mod1.UseVisualStyleBackColor = true;
+            this.mod1.CheckedChanged += new System.EventHandler(this.mod1_CheckedChanged);
+            // 
+            // mod2
+            // 
+            this.mod2.AutoSize = true;
+            this.mod2.Font = new System.Drawing.Font("Poppins Light", 12F);
+            this.mod2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.mod2.Location = new System.Drawing.Point(548, 489);
+            this.mod2.Name = "mod2";
+            this.mod2.Size = new System.Drawing.Size(167, 32);
+            this.mod2.TabIndex = 56;
+            this.mod2.Text = "Eliminar sin Stock";
+            this.mod2.UseVisualStyleBackColor = true;
+            this.mod2.CheckedChanged += new System.EventHandler(this.mod2_CheckedChanged);
+            // 
+            // tCategoria
+            // 
+            this.tCategoria.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            this.tCategoria.Location = new System.Drawing.Point(203, 501);
+            this.tCategoria.Name = "tCategoria";
+            this.tCategoria.Size = new System.Drawing.Size(180, 23);
+            this.tCategoria.TabIndex = 58;
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Location = new System.Drawing.Point(33, 498);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(115, 28);
+            this.lblCategoria.TabIndex = 57;
+            this.lblCategoria.Text = "Categoria ID:";
+            // 
+            // notifPanel
+            // 
+            this.notifPanel.AutoSize = true;
+            this.notifPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.notifPanel.Controls.Add(this.notifIcon);
+            this.notifPanel.Controls.Add(this.notifCloseBtn);
+            this.notifPanel.Controls.Add(this.notifLabel);
+            this.notifPanel.Location = new System.Drawing.Point(245, 201);
+            this.notifPanel.Name = "notifPanel";
+            this.notifPanel.Size = new System.Drawing.Size(292, 36);
+            this.notifPanel.TabIndex = 59;
+            this.notifPanel.Visible = false;
+            // 
+            // notifIcon
+            // 
+            this.notifIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.notifIcon.ForeColor = System.Drawing.Color.LimeGreen;
+            this.notifIcon.IconChar = FontAwesome.Sharp.IconChar.ExclamationTriangle;
+            this.notifIcon.IconColor = System.Drawing.Color.LimeGreen;
+            this.notifIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.notifIcon.IconSize = 36;
+            this.notifIcon.Location = new System.Drawing.Point(8, 1);
+            this.notifIcon.Name = "notifIcon";
+            this.notifIcon.Size = new System.Drawing.Size(32, 32);
+            this.notifIcon.TabIndex = 3;
+            this.notifIcon.TabStop = false;
+            // 
+            // notifCloseBtn
+            // 
+            this.notifCloseBtn.BackColor = System.Drawing.Color.Transparent;
+            this.notifCloseBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.notifCloseBtn.FlatAppearance.BorderSize = 0;
+            this.notifCloseBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.notifCloseBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.notifCloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.notifCloseBtn.Location = new System.Drawing.Point(262, 0);
+            this.notifCloseBtn.Name = "notifCloseBtn";
+            this.notifCloseBtn.Size = new System.Drawing.Size(30, 36);
+            this.notifCloseBtn.TabIndex = 2;
+            this.notifCloseBtn.Text = "x";
+            this.notifCloseBtn.UseVisualStyleBackColor = false;
+            this.notifCloseBtn.Click += new System.EventHandler(this.notifCloseBtn_Click);
+            // 
+            // notifLabel
+            // 
+            this.notifLabel.AutoSize = true;
+            this.notifLabel.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notifLabel.Location = new System.Drawing.Point(46, 8);
+            this.notifLabel.Name = "notifLabel";
+            this.notifLabel.Size = new System.Drawing.Size(61, 15);
+            this.notifLabel.TabIndex = 0;
+            this.notifLabel.Text = "alertMsg";
             // 
             // inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.bUserDelete);
-            this.Controls.Add(this.bUserModify);
-            this.Controls.Add(this.bUserAdd);
-            this.Controls.Add(this.userTable);
+            this.ClientSize = new System.Drawing.Size(800, 575);
+            this.Controls.Add(this.notifPanel);
+            this.Controls.Add(this.tCategoria);
+            this.Controls.Add(this.lblCategoria);
+            this.Controls.Add(this.mod2);
+            this.Controls.Add(this.mod1);
+            this.Controls.Add(this.tImagen);
+            this.Controls.Add(this.lblImagen);
+            this.Controls.Add(this.lblModo);
+            this.Controls.Add(this.tStock);
+            this.Controls.Add(this.lblStock);
+            this.Controls.Add(this.t3);
+            this.Controls.Add(this.lblDos);
+            this.Controls.Add(this.t2);
+            this.Controls.Add(this.tID);
+            this.Controls.Add(this.lblUno);
+            this.Controls.Add(this.lbl_Id);
+            this.Controls.Add(this.lblDatos);
+            this.Controls.Add(this.bProducto);
+            this.Controls.Add(this.bCategoria);
+            this.Controls.Add(this.bDelete);
+            this.Controls.Add(this.bModify);
+            this.Controls.Add(this.bAdd);
+            this.Controls.Add(this.TablaProductos);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "inventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.inventario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TablaProductos)).EndInit();
+            this.notifPanel.ResumeLayout(false);
+            this.notifPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.notifIcon)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -291,9 +601,32 @@ namespace Controlador
         private System.Windows.Forms.Label lRol;
         private System.Windows.Forms.PictureBox profilePicture;
         private System.Windows.Forms.Label lNombre;
-        private System.Windows.Forms.DataGridView userTable;
-        private FontAwesome.Sharp.IconButton bUserDelete;
-        private FontAwesome.Sharp.IconButton bUserModify;
-        private FontAwesome.Sharp.IconButton bUserAdd;
+        private System.Windows.Forms.DataGridView TablaProductos;
+        private FontAwesome.Sharp.IconButton bDelete;
+        private FontAwesome.Sharp.IconButton bModify;
+        private FontAwesome.Sharp.IconButton bAdd;
+        private System.Windows.Forms.Timer Clock;
+        private FontAwesome.Sharp.IconButton bCategoria;
+        private FontAwesome.Sharp.IconButton bProducto;
+        private System.Windows.Forms.TextBox tImagen;
+        private System.Windows.Forms.Label lblImagen;
+        private System.Windows.Forms.Label lblModo;
+        private System.Windows.Forms.TextBox tStock;
+        private System.Windows.Forms.Label lblStock;
+        private System.Windows.Forms.TextBox t3;
+        private System.Windows.Forms.Label lblDos;
+        private System.Windows.Forms.TextBox t2;
+        private System.Windows.Forms.TextBox tID;
+        private System.Windows.Forms.Label lblUno;
+        private System.Windows.Forms.Label lbl_Id;
+        private System.Windows.Forms.Label lblDatos;
+        private System.Windows.Forms.CheckBox mod1;
+        private System.Windows.Forms.CheckBox mod2;
+        private System.Windows.Forms.TextBox tCategoria;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.Panel notifPanel;
+        private FontAwesome.Sharp.IconPictureBox notifIcon;
+        private System.Windows.Forms.Button notifCloseBtn;
+        private System.Windows.Forms.Label notifLabel;
     }
 }
