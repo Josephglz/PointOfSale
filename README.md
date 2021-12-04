@@ -31,7 +31,7 @@ Proyecto Punto de Venta desarrollado en C# con Net Core 4.5<br>
 ## To do
 
 - [x] Ventana Inventario.
-  - [ ] Agregar Sistema CRUD para inventario.
+  - [x] Agregar Sistema CRUD para inventario.
 - [ ] Ventana Reportes
 - [ ] Imprimir Ticket
 - [ ] Función a botón "Vender".
