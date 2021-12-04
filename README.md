@@ -16,13 +16,17 @@ Proyecto Punto de Venta desarrollado en C# con Net Core 4.5<br>
 
 ## Screenshots
 
-<b>Logos e imágenes son creadas de prueba únicamente.</b><br><br>
-
+<b>Logos e imágenes son creadas de prueba únicamente.</b><br>
+<details>
+<summary>
+    Imágenes de Muestra&hellip;
+</summary>
+<br>
 <img src="https://github.com/Josephglz/PuntoDeVenta/blob/main/examples/loader.png?raw=true">
 <img src="https://github.com/Josephglz/PuntoDeVenta/blob/main/examples/login.png?raw=true">
 <img src="https://github.com/Josephglz/PuntoDeVenta/blob/main/examples/home.png?raw=true">
 <img src="https://github.com/Josephglz/PuntoDeVenta/blob/main/examples/users.png?raw=true">
-
+</details>
 
 ## To do
 
