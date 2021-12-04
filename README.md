@@ -26,6 +26,8 @@ Proyecto Punto de Venta desarrollado en C# con Net Core 4.5<br>
 <img src="https://github.com/Josephglz/PuntoDeVenta/blob/main/examples/login.png?raw=true">
 <img src="https://github.com/Josephglz/PuntoDeVenta/blob/main/examples/home.png?raw=true">
 <img src="https://github.com/Josephglz/PuntoDeVenta/blob/main/examples/users.png?raw=true">
+<img src="https://github.com/Josephglz/PuntoDeVenta/blob/main/examples/inventory_categ.png?raw=true">
+<img src="https://github.com/Josephglz/PuntoDeVenta/blob/main/examples/inventory_products.png?raw=true">
 </details>
 
 ## To do
