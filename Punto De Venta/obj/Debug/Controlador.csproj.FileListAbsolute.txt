@@ -15,3 +15,7 @@ E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\obj\Debug\Controlador.csproj.Co
 E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\bin\Debug\ControladorDLL.dll
 E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\bin\Debug\ControladorDLL.pdb
 E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\bin\Debug\FontAwesome.Sharp.dll
+E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+E:\C#\Punto de Venta\PuntoDeVenta\Punto De Venta\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll

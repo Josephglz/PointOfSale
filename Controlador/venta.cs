@@ -113,6 +113,7 @@ namespace Controlador
                             cambio = Math.Round(cambio, 2);
                             tCambio.Text = "$" + cambio;
                             tPago.Text = "$" + tPago.Text;
+                            bCobrar.Enabled = true;
                         }
                         else
                         {
@@ -130,12 +131,32 @@ namespace Controlador
                 }
             }
         }
-
         private void bCancelar_Click(object sender, EventArgs e)
         {
             tPago.Text = "$0.00";
         }
+        private void bCobrar_Click(object sender, EventArgs e)
+        {
+            float pago = float.Parse(tPago.Text.Substring(1));
+            float total = float.Parse(tTotal.Text.Substring(1));
+            if(tPago.Text != "$0.00" && pago >= total)
+            {
+                showAlert(3, "Cobro con éxito.\nImprima el ticket para continuar", 7);
+                bPrint.Enabled = true;
+            }
+            else if(tPago.Enabled == false)
+            {
+                showAlert(2, "Seleccione un método de pago.", 3);
+            }
+            else if(total > pago)
+            {
+                showAlert(1, "El total no ha sido liquidado,", 3);
+            }
+        }
+        private void bPrint_Click(object sender, EventArgs e)
+        {
 
+        }
         private void notifCloseBtn_Click(object sender, EventArgs e)
         {
             notifCount = 0;

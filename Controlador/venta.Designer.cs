@@ -317,7 +317,7 @@ namespace Controlador
             // bCobrar
             // 
             this.bCobrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
-            this.bCobrar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.bCobrar.Enabled = false;
             this.bCobrar.FlatAppearance.BorderSize = 0;
             this.bCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCobrar.Font = new System.Drawing.Font("MS PGothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -334,6 +334,7 @@ namespace Controlador
             this.bCobrar.Text = "COBRAR";
             this.bCobrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bCobrar.UseVisualStyleBackColor = false;
+            this.bCobrar.Click += new System.EventHandler(this.bCobrar_Click);
             // 
             // bCancelar
             // 
@@ -353,6 +354,8 @@ namespace Controlador
             // bPrint
             // 
             this.bPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(70)))), ((int)(((byte)(255)))));
+            this.bPrint.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.bPrint.Enabled = false;
             this.bPrint.FlatAppearance.BorderSize = 0;
             this.bPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bPrint.IconChar = FontAwesome.Sharp.IconChar.Print;
@@ -364,6 +367,7 @@ namespace Controlador
             this.bPrint.Size = new System.Drawing.Size(106, 45);
             this.bPrint.TabIndex = 39;
             this.bPrint.UseVisualStyleBackColor = false;
+            this.bPrint.Click += new System.EventHandler(this.bPrint_Click);
             // 
             // notifPanel
             // 
@@ -374,7 +378,7 @@ namespace Controlador
             this.notifPanel.Controls.Add(this.notifLabel);
             this.notifPanel.Location = new System.Drawing.Point(122, 184);
             this.notifPanel.Name = "notifPanel";
-            this.notifPanel.Size = new System.Drawing.Size(310, 36);
+            this.notifPanel.Size = new System.Drawing.Size(310, 49);
             this.notifPanel.TabIndex = 40;
             this.notifPanel.Visible = false;
             // 
@@ -385,8 +389,7 @@ namespace Controlador
             this.notifIcon.IconChar = FontAwesome.Sharp.IconChar.ExclamationTriangle;
             this.notifIcon.IconColor = System.Drawing.Color.LimeGreen;
             this.notifIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.notifIcon.IconSize = 36;
-            this.notifIcon.Location = new System.Drawing.Point(8, 1);
+            this.notifIcon.Location = new System.Drawing.Point(9, 8);
             this.notifIcon.Name = "notifIcon";
             this.notifIcon.Size = new System.Drawing.Size(32, 32);
             this.notifIcon.TabIndex = 3;
@@ -402,7 +405,7 @@ namespace Controlador
             this.notifCloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.notifCloseBtn.Location = new System.Drawing.Point(280, 0);
             this.notifCloseBtn.Name = "notifCloseBtn";
-            this.notifCloseBtn.Size = new System.Drawing.Size(30, 36);
+            this.notifCloseBtn.Size = new System.Drawing.Size(30, 49);
             this.notifCloseBtn.TabIndex = 2;
             this.notifCloseBtn.Text = "x";
             this.notifCloseBtn.UseVisualStyleBackColor = false;
@@ -412,7 +415,7 @@ namespace Controlador
             // 
             this.notifLabel.AutoSize = true;
             this.notifLabel.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notifLabel.Location = new System.Drawing.Point(46, 8);
+            this.notifLabel.Location = new System.Drawing.Point(56, 14);
             this.notifLabel.Name = "notifLabel";
             this.notifLabel.Size = new System.Drawing.Size(189, 15);
             this.notifLabel.TabIndex = 0;

@@ -18,3 +18,9 @@ E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\FontAwesome.Sharp.dll
 E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Controlador.users.resources
 E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Controlador.inventario.resources
 E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Controlador.venta.resources
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\Microsoft.SqlServer.Types.dll
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Vista.csproj.CopyComplete
