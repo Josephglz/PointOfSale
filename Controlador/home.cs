@@ -17,13 +17,14 @@ namespace Controlador
         private DataSet usuarios;
         DataSet queryProductos = new DataSet();
         private List<Producto> listaProductos;
-        private List<Producto> carrito = new List<Producto>();
+        private List<Venta> carrito = new List<Venta>();
         /*---------- VARIABLES MISC ----------*/
         public int notifCount = 7;
         private int totProducts = 0;
-        private double subTotal = 0.0;
-        private double IVA = 0.0;
-        private double Total = 0.0;
+
+        private bool dragging = false;
+        private Point dragCursorPoint;
+        private Point dragFormPoint;
         /*---------- CONSTRUCTOR ----------*/
         public home() { }
         public home(int role, int id_user, DataSet user)
@@ -76,7 +77,6 @@ namespace Controlador
             }
             AbrirForms<calculadora>();
         }
-
         /*---------- CONTROLLERS ----------*/
         private void bBack_Click(object sender, EventArgs e)
         {
@@ -161,6 +161,79 @@ namespace Controlador
             else
             {
                 showAlert(2, "El carrito se encuentra vacío", 5);
+            }
+        }
+        private void home_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            dragCursorPoint = Cursor.Position;
+            dragFormPoint = this.Location;
+        }
+        private void home_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
+                this.Location = Point.Add(dragFormPoint, new Size(dif));
+            }
+        }
+        private void home_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+        private void notifCloseBtn_Click(object sender, EventArgs e)
+        {
+            notifCount = 0;
+            notifPanel.Visible = false;
+        }
+        private void tCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                AddProduct();
+            }
+        }
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            clock.Stop();
+            users vUsers = new users(id_user, usuarios);
+            vUsers.ShowDialog();
+            clock.Start();
+        }
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            clock.Stop();
+            inventario vInventario = new inventario(id_user);
+            vInventario.ShowDialog();
+            clock.Start();
+            loadProducts();
+        }
+        private void btnTicket_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void bVender_Click(object sender, EventArgs e)
+        {
+            if (lTotal.Text != "$0.00")
+            {
+                clock.Stop();
+                venta vVenta = new venta(lNombre.Text, lRol.Text, Convert.ToDouble(lTotal.Text.Substring(1)), profilePicture.ImageLocation);
+                DialogResult result = vVenta.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    UpdateInventory();
+                    PanelProductos.Controls.Clear();
+                    showAlert(3, "Se ha vacíado el carrito!", 5);
+                    lSubtotal.Text = "$0.00";
+                    lIVA.Text = "$0.00";
+                    lTotal.Text = "$0.00";
+                    clearPreviewProducts();
+                }
+                clock.Start();
+            }
+            else
+            {
+                showAlert(1, "El carrito se encuentra vacío.", 3);
             }
         }
         /*---------- LOADERS ----------*/
@@ -352,6 +425,7 @@ namespace Controlador
                         Console.WriteLine("Cantidad de Productos añadidos: " + PanelProductos.Controls.Count);
                         updateTotals();
                         tCodigo.Text = "";
+                        carrito.Add(new Venta());
                     }
                     else
                     {
@@ -450,32 +524,9 @@ namespace Controlador
                 notifCount--;
             }
         }
-        private void notifCloseBtn_Click(object sender, EventArgs e)
+        public void UpdateInventory()
         {
-            notifCount = 0;
-            notifPanel.Visible = false;
-        }
-        private void tCodigo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                AddProduct();
-            }
-        }
-        private void btnUsers_Click(object sender, EventArgs e)
-        {
-            clock.Stop();
-            users vUsers = new users(id_user, usuarios);
-            vUsers.ShowDialog();
-            clock.Start();
-        }
-        private void btnInventory_Click(object sender, EventArgs e)
-        {
-            clock.Stop();
-            inventario vInventario = new inventario(id_user);
-            vInventario.ShowDialog();
-            clock.Start();
-            loadProducts();
+
         }
     }
 }

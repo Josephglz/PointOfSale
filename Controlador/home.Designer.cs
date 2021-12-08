@@ -70,7 +70,7 @@ namespace Controlador
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.btnTrash = new FontAwesome.Sharp.IconButton();
             this.btnReports = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.bVender = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             this.notifPanel.SuspendLayout();
@@ -433,7 +433,7 @@ namespace Controlador
             this.flowLayoutPanel1.Controls.Add(this.btnSearch);
             this.flowLayoutPanel1.Controls.Add(this.btnTrash);
             this.flowLayoutPanel1.Controls.Add(this.btnReports);
-            this.flowLayoutPanel1.Controls.Add(this.iconButton2);
+            this.flowLayoutPanel1.Controls.Add(this.bVender);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(803, 307);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(207, 210);
@@ -488,6 +488,7 @@ namespace Controlador
             this.btnTicket.Size = new System.Drawing.Size(51, 45);
             this.btnTicket.TabIndex = 27;
             this.btnTicket.UseVisualStyleBackColor = false;
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
             // 
             // btnSearch
             // 
@@ -538,25 +539,26 @@ namespace Controlador
             this.btnReports.TabIndex = 29;
             this.btnReports.UseVisualStyleBackColor = false;
             // 
-            // iconButton2
+            // bVender
             // 
-            this.iconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("MS PGothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
-            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 36;
-            this.iconButton2.Location = new System.Drawing.Point(10, 150);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(10, 40, 3, 3);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(184, 45);
-            this.iconButton2.TabIndex = 28;
-            this.iconButton2.Text = "VENDER";
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = false;
+            this.bVender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(209)))), ((int)(((byte)(66)))));
+            this.bVender.FlatAppearance.BorderSize = 0;
+            this.bVender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVender.Font = new System.Drawing.Font("MS PGothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bVender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.bVender.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
+            this.bVender.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.bVender.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bVender.IconSize = 36;
+            this.bVender.Location = new System.Drawing.Point(10, 150);
+            this.bVender.Margin = new System.Windows.Forms.Padding(10, 40, 3, 3);
+            this.bVender.Name = "bVender";
+            this.bVender.Size = new System.Drawing.Size(184, 45);
+            this.bVender.TabIndex = 28;
+            this.bVender.Text = "VENDER";
+            this.bVender.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bVender.UseVisualStyleBackColor = false;
+            this.bVender.Click += new System.EventHandler(this.bVender_Click);
             // 
             // home
             // 
@@ -579,6 +581,9 @@ namespace Controlador
             this.Name = "home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.home_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.home_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.home_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.home_MouseUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
@@ -635,6 +640,6 @@ namespace Controlador
         private FontAwesome.Sharp.IconButton btnUsers;
         private FontAwesome.Sharp.IconButton btnInventory;
         private FontAwesome.Sharp.IconButton btnSearch;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton bVender;
     }
 }

@@ -78,7 +78,6 @@ namespace Vista
             this.MaximizeBox = false;
             this.Name = "loader";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.loader_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

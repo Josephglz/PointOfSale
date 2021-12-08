@@ -28,10 +28,5 @@ namespace Vista
                 timer1.Stop();
             }
         }
-
-        private void loader_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

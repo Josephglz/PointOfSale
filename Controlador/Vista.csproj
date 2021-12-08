@@ -93,6 +93,12 @@
     <Compile Include="users.Designer.cs">
       <DependentUpon>users.cs</DependentUpon>
     </Compile>
+    <Compile Include="venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="venta.Designer.cs">
+      <DependentUpon>venta.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="calculadora.resx">
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="users.resx">
       <DependentUpon>users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="venta.resx">
+      <DependentUpon>venta.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

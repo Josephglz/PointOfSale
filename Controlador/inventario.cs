@@ -232,6 +232,8 @@ namespace Controlador
         {
             loadColumnsTable(1);
             opc = 1;
+            bProducto.BackColor = Color.Teal;
+            bCategoria.BackColor = Color.LightSeaGreen;
         }
 
         private void notifCloseBtn_Click(object sender, EventArgs e)
@@ -266,6 +268,8 @@ namespace Controlador
         {
             loadColumnsTable(2);
             opc = 2;
+            bCategoria.BackColor = Color.Teal;
+            bProducto.BackColor = Color.LightSeaGreen;
         }
 
         private void bAdd_Click(object sender, EventArgs e)
