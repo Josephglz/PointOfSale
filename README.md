@@ -38,6 +38,6 @@ Proyecto Punto de Venta desarrollado en C# con Net Core 4.5<br>
 - [ ] Función a botón "Vender".
 
 ##
-<a href="https://www.buymeacoffee.com/josephglz99" target="_blank"><img src="https://codewithmukesh.com/wp-content/uploads/2021/04/bmclogo.jpg" alt="Buy Me A Coffee" width="200"  style="height: 60px !important;width: 200px !important;" ></a>
+<!--<a href="https://www.buymeacoffee.com/josephglz99" target="_blank"><img src="https://codewithmukesh.com/wp-content/uploads/2021/04/bmclogo.jpg" alt="Buy Me A Coffee" width="200"  style="height: 60px !important;width: 200px !important;" ></a> -->
 
 [![](https://img.shields.io/badge/back%20to%20top-%E2%86%A9-blue)](#Screenshots)
