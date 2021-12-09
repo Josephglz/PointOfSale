@@ -16,6 +16,20 @@ namespace Controlador
         private string nombre, rol, imagen;
         private double total;
         public int notifCount = 5;
+        public string getPago
+        {
+            get
+            {
+                return tPago.Text;
+            }
+        }
+        public string getCambio
+        {
+            get
+            {
+                return tCambio.Text;
+            }
+        }
         /*---------- CONSTRUCTORS ----------*/
         public venta(string nombre, string rol, double total, string image)
         {
@@ -117,7 +131,7 @@ namespace Controlador
                         }
                         else
                         {
-                            showAlert(1, "El pago es menor.", 3);
+                            showAlert(1, "El pago es menor al total a pagar.", 3);
                         }
                     }
                     catch(Exception error)

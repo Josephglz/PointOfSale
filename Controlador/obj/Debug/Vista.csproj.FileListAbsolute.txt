@@ -23,4 +23,4 @@ E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\SqlServerTypes\x64\SqlSe
 E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\SqlServerTypes\x86\msvcr120.dll
 E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\Microsoft.SqlServer.Types.dll
-E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Vista.csproj.CopyComplete
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Controlador.ticket.resources

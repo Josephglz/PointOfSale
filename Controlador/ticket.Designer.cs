@@ -38,8 +38,8 @@ namespace Controlador
             this.lHora = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.ticket_prPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ticket_prCant = new System.Windows.Forms.Label();
@@ -59,7 +59,6 @@ namespace Controlador
             this.lblMensaje = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logoTienda)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
-            this.ticket_prPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // logoTienda
@@ -72,6 +71,7 @@ namespace Controlador
             this.logoTienda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoTienda.TabIndex = 0;
             this.logoTienda.TabStop = false;
+            this.logoTienda.Click += new System.EventHandler(this.logoTienda_Click);
             // 
             // panel1
             // 
@@ -100,7 +100,7 @@ namespace Controlador
             this.lDireccion.Name = "lDireccion";
             this.lDireccion.Size = new System.Drawing.Size(319, 26);
             this.lDireccion.TabIndex = 42;
-            this.lDireccion.Text = "Dirección, Codigo postal, Ciudad, Estado";
+            this.lDireccion.Text = "Calle Haiti #305, C.P. 893605, Tampico, Tamps.";
             // 
             // lFecha
             // 
@@ -144,16 +144,6 @@ namespace Controlador
             this.flowLayoutPanel1.Size = new System.Drawing.Size(319, 27);
             this.flowLayoutPanel1.TabIndex = 46;
             // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Dubai", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(66, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(165, 21);
-            this.label4.TabIndex = 46;
-            this.label4.Text = "CONCEPTO";
-            // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Dubai", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -163,6 +153,16 @@ namespace Controlador
             this.label5.Size = new System.Drawing.Size(57, 21);
             this.label5.TabIndex = 47;
             this.label5.Text = "CANT";
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Dubai", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(66, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(165, 21);
+            this.label4.TabIndex = 46;
+            this.label4.Text = "CONCEPTO";
             // 
             // label6
             // 
@@ -177,9 +177,6 @@ namespace Controlador
             // ticket_prPanel
             // 
             this.ticket_prPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ticket_prPanel.Controls.Add(this.ticket_prCant);
-            this.ticket_prPanel.Controls.Add(this.ticket_prNombre);
-            this.ticket_prPanel.Controls.Add(this.ticket_prPrecio);
             this.ticket_prPanel.Location = new System.Drawing.Point(17, 224);
             this.ticket_prPanel.Name = "ticket_prPanel";
             this.ticket_prPanel.Size = new System.Drawing.Size(319, 189);
@@ -187,34 +184,24 @@ namespace Controlador
             // 
             // ticket_prCant
             // 
-            this.ticket_prCant.Font = new System.Drawing.Font("Dubai", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ticket_prCant.ForeColor = System.Drawing.Color.Black;
-            this.ticket_prCant.Location = new System.Drawing.Point(3, 0);
+            this.ticket_prCant.Location = new System.Drawing.Point(0, 0);
             this.ticket_prCant.Name = "ticket_prCant";
-            this.ticket_prCant.Size = new System.Drawing.Size(57, 20);
-            this.ticket_prCant.TabIndex = 47;
-            this.ticket_prCant.Text = "0";
+            this.ticket_prCant.Size = new System.Drawing.Size(100, 23);
+            this.ticket_prCant.TabIndex = 0;
             // 
             // ticket_prNombre
             // 
-            this.ticket_prNombre.AutoEllipsis = true;
-            this.ticket_prNombre.Font = new System.Drawing.Font("Dubai", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ticket_prNombre.ForeColor = System.Drawing.Color.Black;
-            this.ticket_prNombre.Location = new System.Drawing.Point(66, 0);
+            this.ticket_prNombre.Location = new System.Drawing.Point(0, 0);
             this.ticket_prNombre.Name = "ticket_prNombre";
-            this.ticket_prNombre.Size = new System.Drawing.Size(165, 20);
-            this.ticket_prNombre.TabIndex = 46;
-            this.ticket_prNombre.Text = "nombre";
+            this.ticket_prNombre.Size = new System.Drawing.Size(100, 23);
+            this.ticket_prNombre.TabIndex = 0;
             // 
             // ticket_prPrecio
             // 
-            this.ticket_prPrecio.Font = new System.Drawing.Font("Dubai", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ticket_prPrecio.ForeColor = System.Drawing.Color.Black;
-            this.ticket_prPrecio.Location = new System.Drawing.Point(237, 0);
+            this.ticket_prPrecio.Location = new System.Drawing.Point(0, 0);
             this.ticket_prPrecio.Name = "ticket_prPrecio";
-            this.ticket_prPrecio.Size = new System.Drawing.Size(66, 20);
-            this.ticket_prPrecio.TabIndex = 48;
-            this.ticket_prPrecio.Text = "IMPORTE";
+            this.ticket_prPrecio.Size = new System.Drawing.Size(100, 23);
+            this.ticket_prPrecio.TabIndex = 0;
             // 
             // label7
             // 
@@ -369,10 +356,11 @@ namespace Controlador
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ticket";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generar Ticket";
+            this.Load += new System.EventHandler(this.ticket_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logoTienda)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.ticket_prPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -406,5 +394,9 @@ namespace Controlador
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblMensaje;
+        private System.Windows.Forms.FlowLayoutPanel Prod_Panel;
+        private System.Windows.Forms.Label Prod_Cant;
+        private System.Windows.Forms.Label Prod_Name;
+        private System.Windows.Forms.Label Prod_Precio;
     }
 }

@@ -17,7 +17,6 @@ namespace Controlador
         private DataSet usuarios;
         DataSet queryProductos = new DataSet();
         private List<Producto> listaProductos;
-        private List<Venta> carrito = new List<Venta>();
         /*---------- VARIABLES MISC ----------*/
         public int notifCount = 7;
         private int totProducts = 0;
@@ -221,6 +220,8 @@ namespace Controlador
                 DialogResult result = vVenta.ShowDialog();
                 if (result == DialogResult.OK)
                 {
+                    ticket vTicket = new ticket(lFecha.Text, lReloj.Text, lTotal.Text, lSubtotal.Text, lIVA.Text, vVenta.getPago, vVenta.getCambio, lNombre.Text, carrito);
+                    vTicket.ShowDialog();
                     UpdateInventory();
                     PanelProductos.Controls.Clear();
                     showAlert(3, "Se ha vacíado el carrito!", 5);
@@ -422,10 +423,8 @@ namespace Controlador
                         PanelProductos.Controls.Add(prod);
                         showPreviewProduct(listaProductos.ElementAt(select).getNombre(), listaProductos.ElementAt(select).getPrecio(), listaProductos.ElementAt(select).getImage(), listaProductos.ElementAt(select).getIdProducto(), listaProductos.ElementAt(select).getStock());
                         showAlert(3, "Producto añadido al carrito!", 2);
-                        Console.WriteLine("Cantidad de Productos añadidos: " + PanelProductos.Controls.Count);
                         updateTotals();
                         tCodigo.Text = "";
-                        carrito.Add(new Venta());
                     }
                     else
                     {
