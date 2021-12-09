@@ -17,6 +17,7 @@ namespace Controlador
         private DataSet usuarios;
         DataSet queryProductos = new DataSet();
         private List<Producto> listaProductos;
+        private List<string> carrito = new List<string>();
         /*---------- VARIABLES MISC ----------*/
         public int notifCount = 7;
         private int totProducts = 0;
@@ -114,6 +115,9 @@ namespace Controlador
                     int cant = Convert.ToInt32(PanelProductos.Controls[i].Controls[2].Text);
                     cant++;
                     PanelProductos.Controls[i].Controls[2].Text = cant.ToString();
+                    string[] datos = carrito[i].Split(',');
+                    carrito[i] = datos[0] + "," + datos[1] + "," + cant;
+
                     updateTotals();
                 }
             }
@@ -425,6 +429,7 @@ namespace Controlador
                         showAlert(3, "Producto añadido al carrito!", 2);
                         updateTotals();
                         tCodigo.Text = "";
+                        carrito.Add(listaProductos.ElementAt(select).getNombre() + "," + listaProductos.ElementAt(select).getPrecio() + ",1");
                     }
                     else
                     {
