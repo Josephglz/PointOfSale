@@ -579,6 +579,7 @@ namespace Controlador
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "inventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Administrar Inventario";
             this.Load += new System.EventHandler(this.inventario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

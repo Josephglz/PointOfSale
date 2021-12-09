@@ -564,6 +564,7 @@ namespace Controlador
             this.MinimizeBox = false;
             this.Name = "users";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Administrar Usuarios";
             this.Load += new System.EventHandler(this.users_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             this.panel1.ResumeLayout(false);

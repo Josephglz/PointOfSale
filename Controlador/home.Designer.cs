@@ -580,6 +580,7 @@ namespace Controlador
             this.MaximizeBox = false;
             this.Name = "home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Punto de Venta";
             this.Load += new System.EventHandler(this.home_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.home_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.home_MouseMove);

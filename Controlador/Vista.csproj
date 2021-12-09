@@ -91,6 +91,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ticket.Designer.cs">
+      <DependentUpon>ticket.cs</DependentUpon>
+    </Compile>
     <Compile Include="users.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ticket.resx">
+      <DependentUpon>ticket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="users.resx">
       <DependentUpon>users.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +154,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\vendedor.png" />
+    <None Include="Resources\no-image.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\info_icon.png" />
+    <None Include="Resources\admin.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -136,7 +136,7 @@ namespace Controlador
             this.lNombreT.Name = "lNombreT";
             this.lNombreT.Size = new System.Drawing.Size(558, 60);
             this.lNombreT.TabIndex = 10;
-            this.lNombreT.Text = "Punto de Cobro";
+            this.lNombreT.Text = "Generar Venta";
             this.lNombreT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
@@ -331,7 +331,7 @@ namespace Controlador
             this.bCobrar.Name = "bCobrar";
             this.bCobrar.Size = new System.Drawing.Size(158, 45);
             this.bCobrar.TabIndex = 32;
-            this.bCobrar.Text = "COBRAR";
+            this.bCobrar.Text = "Punto de Cobro";
             this.bCobrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bCobrar.UseVisualStyleBackColor = false;
             this.bCobrar.Click += new System.EventHandler(this.bCobrar_Click);
@@ -446,7 +446,7 @@ namespace Controlador
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "venta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "venta";
+            this.Text = "Generar Venta";
             this.Load += new System.EventHandler(this.venta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
