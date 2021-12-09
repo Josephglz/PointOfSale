@@ -224,7 +224,7 @@ namespace Controlador
                 DialogResult result = vVenta.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    ticket vTicket = new ticket(lFecha.Text, lReloj.Text, lTotal.Text, lSubtotal.Text, lIVA.Text, vVenta.getPago, vVenta.getCambio, lNombre.Text, carrito);
+                    ticket vTicket = new ticket(id_user, lFecha.Text, lReloj.Text, lTotal.Text, lSubtotal.Text, lIVA.Text, vVenta.getPago, vVenta.getCambio, lNombre.Text, carrito);
                     vTicket.ShowDialog();
                     UpdateInventory();
                     PanelProductos.Controls.Clear();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControladorDLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,12 @@ namespace Controlador
     public partial class ticket : Form
     {
         private string fecha, hora, total, subtotal, iva, pago, cambio, nombre;
+        private int idEmpleado, ID;
         List<string> carrito = new List<string>();
-        public ticket(string fecha, string hora, string total, string subtotal, string iva, string pago, string cambio, string nombre, List<string> carrito)
+        public ticket(int idEmpleado, string fecha, string hora, string total, string subtotal, string iva, string pago, string cambio, string nombre, List<string> carrito)
         {
             InitializeComponent();
+            this.idEmpleado = idEmpleado;
             this.fecha = fecha;
             this.hora = hora;
             this.total = total;
@@ -27,8 +30,29 @@ namespace Controlador
             this.nombre = nombre;
             this.carrito = carrito;
         }
+        public string getCart()
+        {
+            string cart="";
+            for(int i = 0; i < carrito.Count; i++)
+            {
+                cart = cart + carrito.ElementAt(i) + "|";
+            }
+
+            return cart;
+        }
+
+        public void generateTicket()
+        {
+            string query = "SELECT TOP 1 idTicket FROM Tickets ORDER BY idTicket DESC";
+            DataSet queryID = Biblioteca.herramientas(query);
+            ID = Int32.Parse(queryID.Tables[0].Rows[0]["idTicket"].ToString().Trim()) + 1;
+
+            query = "INSERT INTO Tickets VALUES(" + ID + ",'" + getCart() + "','" + fecha + "','" + hora + "'," + total + "," + pago + "," + idEmpleado + ");";
+            Biblioteca.herramientas(query);
+        }
         private void ticket_Load(object sender, EventArgs e)
         {
+            generateTicket();
             lFecha.Text = fecha;
             lHora.Text = hora;
             lTotal.Text = total;
@@ -37,8 +61,9 @@ namespace Controlador
             lEfectivo.Text = pago;
             lCambio.Text = cambio;
             lblMensaje.Text = "GRACIAS POR SU COMPRA.\nLe atendió: " + nombre;
+            lTicket.Text = "TICKET N°: " + ID;
 
-            for(int i = 0; i < carrito.Count; i++)
+            for (int i = 0; i < carrito.Count; i++)
             {
                 string[] datos = carrito.ElementAt(i).Split(',');
                 Panel Prod_Panel = new Panel();
