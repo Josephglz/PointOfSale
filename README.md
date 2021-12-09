@@ -33,9 +33,9 @@ Proyecto Punto de Venta desarrollado en C# con Net Core 4.5<br>
 
 - [x] Ventana Inventario.
   - [x] Agregar Sistema CRUD para inventario.
-- [ ] Ventana Reportes
-- [ ] Imprimir Ticket
-- [ ] Función a botón "Vender".
+- [x] Ventana Reportes
+- [x] Imprimir Ticket
+- [x] Función a botón "Vender".
 
 ##
 <!--<a href="https://www.buymeacoffee.com/josephglz99" target="_blank"><img src="https://codewithmukesh.com/wp-content/uploads/2021/04/bmclogo.jpg" alt="Buy Me A Coffee" width="200"  style="height: 60px !important;width: 200px !important;" ></a> -->
