@@ -25,7 +25,6 @@ namespace Controlador
             this.id_user = id_user;
             InitializeComponent();
         }
-
         private void inventario_Load(object sender, EventArgs e)
         {
             DataSet user = new DataSet();
@@ -40,8 +39,8 @@ namespace Controlador
                 profilePicture.ImageLocation = image;
             }
             lNombre.Text = nombre + " " + apellido;
+            loadCategorias();
         }
-
         public void loadColumnsTable(int opcion)
         {
             tableModel.Rows.Clear();
@@ -72,7 +71,6 @@ namespace Controlador
             bModify.Enabled = true;
             bDelete.Enabled = true;
         }
-
         public void loadRowsTable(int type)
         {
             if(type == 1)//Productos
@@ -92,7 +90,6 @@ namespace Controlador
                 }
             }
         }
-
         public void loadProductos()
         {
             DataSet productos = new DataSet();
@@ -116,15 +113,14 @@ namespace Controlador
                 lastIDp = id + 1;
             }
         }
-
         public void loadCategorias()
         {
             DataSet categorias = new DataSet();
             listaCategoria.Clear();
+            cbCategoria.Items.Clear();
             categorias = Biblioteca.herramientas("SELECT * FROM Categorias");
             string categoria;
             int id, idparent;
-            float precio;
 
             for (int i = 0; i < categorias.Tables[0].Rows.Count; i++)
             {
@@ -134,6 +130,7 @@ namespace Controlador
 
                 listaCategoria.Add(new Categoria(id, categoria, idparent));
                 lastIDc = id + 1;
+                cbCategoria.Items.Add(categoria);
             }
         }
         /*===============   [   METHODS   ]   ===============*/
@@ -146,7 +143,7 @@ namespace Controlador
             tStock.Text = "";
             mod1.Checked = false;
             mod2.Checked = false;
-            if(opcion == 1)
+            if(opcion == 1) //Productos
             {
                 lblImagen.Visible = true;
                 lblModo.Visible = true;
@@ -154,13 +151,16 @@ namespace Controlador
                 tImagen.Visible = true;
                 tStock.Visible = true;
                 lblCategoria.Visible = true;
-                tCategoria.Visible = true;
+                tCategoria.Visible = false;
                 mod1.Visible = true;
                 mod2.Visible = true;
+                cbCategoria.SelectedIndex = 0;
+                cbCategoria.Visible = true;
                 tID.Text = lastIDp.ToString();
                 lbl_Id.Text = "ID Producto:";
                 lblUno.Text = "Nombre Producto:";
                 lblDos.Text = "Precio:";
+                lblCategoria.Text = "Categoría:";
                 lblDatos.Text = "Datos del Producto";
             }
             else if(opcion == 2)//Categoria
@@ -174,6 +174,7 @@ namespace Controlador
                 mod2.Visible = false;
                 lblCategoria.Visible = false;
                 tCategoria.Visible = false;
+                cbCategoria.Visible = false;
                 tID.Text = lastIDc.ToString();
                 lbl_Id.Text = "ID Categoria:";
                 lblUno.Text = "Nombre Categoria:";
@@ -222,12 +223,22 @@ namespace Controlador
                 notifCount--;
             }
         }
+        public int getIDCategory()
+        {
+            for(int i = 0; i < listaCategoria.Count; i++)
+            {
+                if(cbCategoria.SelectedItem.ToString().Equals(listaCategoria.ElementAt(i).getCategoria()))
+                {
+                    return i;
+                }
+            }
+            return 0;
+        }
         /*===============   [   CONTROLLERS   ]   ===============*/
         private void bExit_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
-
         private void bProducto_Click(object sender, EventArgs e)
         {
             loadColumnsTable(1);
@@ -235,13 +246,11 @@ namespace Controlador
             bProducto.BackColor = Color.Teal;
             bCategoria.BackColor = Color.LightSeaGreen;
         }
-
         private void notifCloseBtn_Click(object sender, EventArgs e)
         {
             notifCount = 0;
             notifPanel.Visible = false;
         }
-
         private void mod1_CheckedChanged(object sender, EventArgs e)
         {
             if (mod1.Checked)
@@ -249,7 +258,6 @@ namespace Controlador
                 mod2.Checked = false;
             }
         }
-
         private void mod2_CheckedChanged(object sender, EventArgs e)
         {
             if (mod2.Checked)
@@ -257,13 +265,15 @@ namespace Controlador
                 mod2.Checked = false;
             }
         }
-
+        private void bDelete_Click(object sender, EventArgs e)
+        {
+            this.Size = new Size(800, 350);
+        }
         private void Clock_Tick(object sender, EventArgs e)
         {
             lReloj.Text = DateTime.Now.ToString("HH:mm:ss");
             lFecha.Text = DateTime.Now.ToString("dd/MMM/yyyy");
         }
-
         private void bCategoria_Click(object sender, EventArgs e)
         {
             loadColumnsTable(2);
@@ -271,7 +281,6 @@ namespace Controlador
             bCategoria.BackColor = Color.Teal;
             bProducto.BackColor = Color.LightSeaGreen;
         }
-
         private void bAdd_Click(object sender, EventArgs e)
         {
             if (opc == 1)
@@ -302,7 +311,7 @@ namespace Controlador
                             int id = Convert.ToInt32(tID.Text);
                             string nombre = t2.Text;
                             float precio = float.Parse(t3.Text);
-                            int categoria = Convert.ToInt32(tCategoria.Text);
+                            int categoria = getIDCategory();
                             int stock = Convert.ToInt32(tStock.Text);
                             int modo = 0;
                             if (mod1.Checked) { modo = 1; }
