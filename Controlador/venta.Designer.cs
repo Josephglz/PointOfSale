@@ -33,6 +33,7 @@ namespace Controlador
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(venta));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lRol = new System.Windows.Forms.Label();
+            this.profilePicture = new System.Windows.Forms.PictureBox();
             this.bBack = new System.Windows.Forms.Button();
             this.lNombre = new System.Windows.Forms.Label();
             this.lNombreT = new System.Windows.Forms.Label();
@@ -42,6 +43,9 @@ namespace Controlador
             this.lbl_Pesos = new System.Windows.Forms.Label();
             this.lFormaPago = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.bCredit = new FontAwesome.Sharp.IconButton();
+            this.bCash = new FontAwesome.Sharp.IconButton();
+            this.bCard = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tCambio = new System.Windows.Forms.TextBox();
             this.lbl_CAMBIO = new System.Windows.Forms.Label();
@@ -49,23 +53,19 @@ namespace Controlador
             this.lbl_TOTAL = new System.Windows.Forms.Label();
             this.bCancelar = new System.Windows.Forms.Button();
             this.notifPanel = new System.Windows.Forms.Panel();
+            this.notifIcon = new FontAwesome.Sharp.IconPictureBox();
             this.notifCloseBtn = new System.Windows.Forms.Button();
             this.notifLabel = new System.Windows.Forms.Label();
             this.Clock = new System.Windows.Forms.Timer(this.components);
-            this.notifIcon = new FontAwesome.Sharp.IconPictureBox();
             this.bPrint = new FontAwesome.Sharp.IconButton();
             this.bCobrar = new FontAwesome.Sharp.IconButton();
-            this.bCredit = new FontAwesome.Sharp.IconButton();
-            this.bCash = new FontAwesome.Sharp.IconButton();
-            this.bCard = new FontAwesome.Sharp.IconButton();
-            this.profilePicture = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.notifPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.notifIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -91,6 +91,16 @@ namespace Controlador
             this.lRol.Size = new System.Drawing.Size(87, 21);
             this.lRol.TabIndex = 9;
             this.lRol.Text = "Administrador";
+            // 
+            // profilePicture
+            // 
+            this.profilePicture.Image = ((System.Drawing.Image)(resources.GetObject("profilePicture.Image")));
+            this.profilePicture.Location = new System.Drawing.Point(3, 3);
+            this.profilePicture.Name = "profilePicture";
+            this.profilePicture.Size = new System.Drawing.Size(60, 49);
+            this.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.profilePicture.TabIndex = 8;
+            this.profilePicture.TabStop = false;
             // 
             // bBack
             // 
@@ -198,6 +208,54 @@ namespace Controlador
             this.panel3.Size = new System.Drawing.Size(492, 71);
             this.panel3.TabIndex = 31;
             // 
+            // bCredit
+            // 
+            this.bCredit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.bCredit.FlatAppearance.BorderSize = 0;
+            this.bCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bCredit.IconChar = FontAwesome.Sharp.IconChar.UserTag;
+            this.bCredit.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(211)))), ((int)(((byte)(67)))));
+            this.bCredit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bCredit.IconSize = 50;
+            this.bCredit.Location = new System.Drawing.Point(314, 10);
+            this.bCredit.Name = "bCredit";
+            this.bCredit.Size = new System.Drawing.Size(55, 52);
+            this.bCredit.TabIndex = 2;
+            this.bCredit.UseVisualStyleBackColor = false;
+            this.bCredit.Click += new System.EventHandler(this.bCredit_Click);
+            // 
+            // bCash
+            // 
+            this.bCash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.bCash.FlatAppearance.BorderSize = 0;
+            this.bCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bCash.IconChar = FontAwesome.Sharp.IconChar.MoneyBillAlt;
+            this.bCash.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(211)))), ((int)(((byte)(67)))));
+            this.bCash.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bCash.IconSize = 50;
+            this.bCash.Location = new System.Drawing.Point(223, 10);
+            this.bCash.Name = "bCash";
+            this.bCash.Size = new System.Drawing.Size(55, 52);
+            this.bCash.TabIndex = 1;
+            this.bCash.UseVisualStyleBackColor = false;
+            this.bCash.Click += new System.EventHandler(this.bCash_Click);
+            // 
+            // bCard
+            // 
+            this.bCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
+            this.bCard.FlatAppearance.BorderSize = 0;
+            this.bCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bCard.IconChar = FontAwesome.Sharp.IconChar.CreditCard;
+            this.bCard.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(211)))), ((int)(((byte)(67)))));
+            this.bCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.bCard.IconSize = 45;
+            this.bCard.Location = new System.Drawing.Point(134, 10);
+            this.bCard.Name = "bCard";
+            this.bCard.Size = new System.Drawing.Size(55, 52);
+            this.bCard.TabIndex = 0;
+            this.bCard.UseVisualStyleBackColor = false;
+            this.bCard.Click += new System.EventHandler(this.bCard_Click);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
@@ -258,11 +316,12 @@ namespace Controlador
             // 
             // bCancelar
             // 
-            this.bCancelar.BackColor = System.Drawing.Color.Transparent;
-            this.bCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.bCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.bCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.bCancelar.FlatAppearance.BorderSize = 0;
             this.bCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCancelar.Font = new System.Drawing.Font("Poppins Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bCancelar.ForeColor = System.Drawing.Color.White;
             this.bCancelar.Location = new System.Drawing.Point(131, 384);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(100, 35);
@@ -283,6 +342,19 @@ namespace Controlador
             this.notifPanel.Size = new System.Drawing.Size(310, 49);
             this.notifPanel.TabIndex = 40;
             this.notifPanel.Visible = false;
+            // 
+            // notifIcon
+            // 
+            this.notifIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.notifIcon.ForeColor = System.Drawing.Color.LimeGreen;
+            this.notifIcon.IconChar = FontAwesome.Sharp.IconChar.ExclamationTriangle;
+            this.notifIcon.IconColor = System.Drawing.Color.LimeGreen;
+            this.notifIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.notifIcon.Location = new System.Drawing.Point(9, 8);
+            this.notifIcon.Name = "notifIcon";
+            this.notifIcon.Size = new System.Drawing.Size(32, 32);
+            this.notifIcon.TabIndex = 3;
+            this.notifIcon.TabStop = false;
             // 
             // notifCloseBtn
             // 
@@ -306,28 +378,15 @@ namespace Controlador
             this.notifLabel.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notifLabel.Location = new System.Drawing.Point(56, 14);
             this.notifLabel.Name = "notifLabel";
-            this.notifLabel.Size = new System.Drawing.Size(189, 15);
+            this.notifLabel.Size = new System.Drawing.Size(68, 15);
             this.notifLabel.TabIndex = 0;
-            this.notifLabel.Text = "No se encontró el producto.";
+            this.notifLabel.Text = "{mensaje}";
             // 
             // Clock
             // 
             this.Clock.Enabled = true;
             this.Clock.Interval = 1000;
             this.Clock.Tick += new System.EventHandler(this.Clock_Tick);
-            // 
-            // notifIcon
-            // 
-            this.notifIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
-            this.notifIcon.ForeColor = System.Drawing.Color.LimeGreen;
-            this.notifIcon.IconChar = FontAwesome.Sharp.IconChar.ExclamationTriangle;
-            this.notifIcon.IconColor = System.Drawing.Color.LimeGreen;
-            this.notifIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.notifIcon.Location = new System.Drawing.Point(9, 8);
-            this.notifIcon.Name = "notifIcon";
-            this.notifIcon.Size = new System.Drawing.Size(32, 32);
-            this.notifIcon.TabIndex = 3;
-            this.notifIcon.TabStop = false;
             // 
             // bPrint
             // 
@@ -369,64 +428,6 @@ namespace Controlador
             this.bCobrar.UseVisualStyleBackColor = false;
             this.bCobrar.Click += new System.EventHandler(this.bCobrar_Click);
             // 
-            // bCredit
-            // 
-            this.bCredit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.bCredit.FlatAppearance.BorderSize = 0;
-            this.bCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bCredit.IconChar = FontAwesome.Sharp.IconChar.UserTag;
-            this.bCredit.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(211)))), ((int)(((byte)(67)))));
-            this.bCredit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bCredit.IconSize = 50;
-            this.bCredit.Location = new System.Drawing.Point(314, 10);
-            this.bCredit.Name = "bCredit";
-            this.bCredit.Size = new System.Drawing.Size(55, 52);
-            this.bCredit.TabIndex = 2;
-            this.bCredit.UseVisualStyleBackColor = false;
-            this.bCredit.Click += new System.EventHandler(this.bCredit_Click);
-            // 
-            // bCash
-            // 
-            this.bCash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.bCash.FlatAppearance.BorderSize = 0;
-            this.bCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bCash.IconChar = FontAwesome.Sharp.IconChar.MoneyBillAlt;
-            this.bCash.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(211)))), ((int)(((byte)(67)))));
-            this.bCash.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bCash.IconSize = 50;
-            this.bCash.Location = new System.Drawing.Point(223, 10);
-            this.bCash.Name = "bCash";
-            this.bCash.Size = new System.Drawing.Size(55, 52);
-            this.bCash.TabIndex = 1;
-            this.bCash.UseVisualStyleBackColor = false;
-            this.bCash.Click += new System.EventHandler(this.bCash_Click);
-            // 
-            // bCard
-            // 
-            this.bCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(52)))));
-            this.bCard.FlatAppearance.BorderSize = 0;
-            this.bCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bCard.IconChar = FontAwesome.Sharp.IconChar.CreditCard;
-            this.bCard.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(211)))), ((int)(((byte)(67)))));
-            this.bCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bCard.IconSize = 45;
-            this.bCard.Location = new System.Drawing.Point(134, 10);
-            this.bCard.Name = "bCard";
-            this.bCard.Size = new System.Drawing.Size(55, 52);
-            this.bCard.TabIndex = 0;
-            this.bCard.UseVisualStyleBackColor = false;
-            this.bCard.Click += new System.EventHandler(this.bCard_Click);
-            // 
-            // profilePicture
-            // 
-            this.profilePicture.Image = ((System.Drawing.Image)(resources.GetObject("profilePicture.Image")));
-            this.profilePicture.Location = new System.Drawing.Point(3, 3);
-            this.profilePicture.Name = "profilePicture";
-            this.profilePicture.Size = new System.Drawing.Size(60, 49);
-            this.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.profilePicture.TabIndex = 8;
-            this.profilePicture.TabStop = false;
-            // 
             // venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,6 +451,7 @@ namespace Controlador
             this.Load += new System.EventHandler(this.venta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -458,7 +460,6 @@ namespace Controlador
             this.notifPanel.ResumeLayout(false);
             this.notifPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.notifIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

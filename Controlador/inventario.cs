@@ -267,7 +267,72 @@ namespace Controlador
         }
         private void bDelete_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(800, 350);
+            if (bDelete.Text == "Eliminar")
+            {
+                if(TablaProductos.SelectedRows.Count > 0)
+                {
+                    string str;
+                    int id = Convert.ToInt32(TablaProductos.SelectedRows[0].Cells["ID"].Value);
+                    if(opc == 1) //Productos
+                    {
+                        str = "ID: " + id +
+                            "\nNombre: " + listaProductos.ElementAt(id - 1).getNombre() +
+                            "\nCategoria: " + listaCategoria.ElementAt(listaProductos.ElementAt(id - 1).getCategoria()).getCategoria() +
+                            "\n\n¿Desea eliminar este Producto?";
+
+                        DialogResult delete = MessageBox.Show(str, "Eliminar Producto", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if(delete == DialogResult.Yes)
+                        {
+                            try
+                            {
+                                string query = "DELETE FROM Productos WHERE id_producto = '" + id + "';";
+                                Biblioteca.herramientas(query);
+                                showAlert(3, "Producto Eliminado", 3);
+                                loadColumnsTable(1);
+                            }
+                            catch(Exception error)
+                            {
+                                showAlert(1, error.Message, 5);
+                            }
+                        }
+                    }
+                    else if(opc == 2) //Categorias
+                    {
+                        str = "ID: " + id +
+                            "\nCategoria: " + listaCategoria.ElementAt(id - 1).getCategoria() +
+                            "\n\n¿Desea eliminar esta Categoria?";
+
+                        DialogResult delete = MessageBox.Show(str, "Eliminar Categoría", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (delete == DialogResult.Yes)
+                        {
+                            try
+                            {
+                                string query = "DELETE FROM Categorias WHERE id_categoria = '" + id + "';";
+                                Biblioteca.herramientas(query);
+                                showAlert(3, "Categoría Eliminada", 3);
+                                loadColumnsTable(2);
+                            }
+                            catch (Exception error)
+                            {
+                                showAlert(1, error.Message, 5);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    showAlert(1, "Debes seleccionar un elemento.", 3);
+                }
+            }
+            else if (bDelete.Text == "Cancelar")
+            {
+                this.Size = new Size(800, 350);
+                bAdd.Text = "Agregar";
+                bDelete.Text = "Eliminar";
+                bModify.Enabled = true;
+                bDelete.IconChar = FontAwesome.Sharp.IconChar.Trash;
+                bAdd.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            }
         }
         private void Clock_Tick(object sender, EventArgs e)
         {
@@ -328,6 +393,7 @@ namespace Controlador
                             bAdd.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
                             bModify.Enabled = true;
                             bDelete.IconChar = FontAwesome.Sharp.IconChar.Trash;
+                            showAlert(3, "Producto añadido al Inventario.", 3);
                         }
                         catch (Exception error)
                         {

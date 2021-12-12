@@ -24,3 +24,4 @@ E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\SqlServerTypes\x86\msvcr
 E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 E:\C#\Punto de Venta\PuntoDeVenta\Controlador\bin\Debug\Microsoft.SqlServer.Types.dll
 E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Controlador.ticket.resources
+E:\C#\Punto de Venta\PuntoDeVenta\Controlador\obj\Debug\Controlador.search.resources

@@ -494,9 +494,9 @@ namespace Controlador
             this.notifLabel.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notifLabel.Location = new System.Drawing.Point(46, 8);
             this.notifLabel.Name = "notifLabel";
-            this.notifLabel.Size = new System.Drawing.Size(61, 15);
+            this.notifLabel.Size = new System.Drawing.Size(71, 15);
             this.notifLabel.TabIndex = 0;
-            this.notifLabel.Text = "alertMsg";
+            this.notifLabel.Text = "{message}";
             // 
             // copyUser
             // 

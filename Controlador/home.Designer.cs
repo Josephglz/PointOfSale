@@ -263,9 +263,9 @@ namespace Controlador
             this.notifLabel.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notifLabel.Location = new System.Drawing.Point(46, 8);
             this.notifLabel.Name = "notifLabel";
-            this.notifLabel.Size = new System.Drawing.Size(189, 15);
+            this.notifLabel.Size = new System.Drawing.Size(71, 15);
             this.notifLabel.TabIndex = 0;
-            this.notifLabel.Text = "No se encontró el producto.";
+            this.notifLabel.Text = "{message}";
             // 
             // panelTotales
             // 
@@ -505,6 +505,7 @@ namespace Controlador
             this.btnSearch.Size = new System.Drawing.Size(51, 45);
             this.btnSearch.TabIndex = 26;
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnTrash
             // 

@@ -532,5 +532,12 @@ namespace Controlador
         {
 
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            search vBuscar = new search(listaProductos);
+            vBuscar.ShowDialog();
+
+        }
     }
 }

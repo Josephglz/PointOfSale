@@ -148,6 +148,7 @@ namespace Controlador
         private void bCancelar_Click(object sender, EventArgs e)
         {
             tPago.Text = "$0.00";
+            tCambio.Text = "$0.00";
         }
         private void bCobrar_Click(object sender, EventArgs e)
         {
@@ -157,6 +158,10 @@ namespace Controlador
             {
                 showAlert(3, "Cobro con éxito.\nImprima el ticket para continuar", 7);
                 bPrint.Enabled = true;
+
+                bCobrar.Enabled = false;
+                bBack.Enabled = false;
+                bCancelar.Enabled = false;
             }
             else if(tPago.Enabled == false)
             {
