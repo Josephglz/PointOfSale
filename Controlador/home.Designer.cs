@@ -539,6 +539,7 @@ namespace Controlador
             this.btnReports.Size = new System.Drawing.Size(51, 45);
             this.btnReports.TabIndex = 29;
             this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // bVender
             // 

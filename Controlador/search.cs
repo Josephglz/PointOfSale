@@ -36,7 +36,7 @@ namespace Controlador
             {
                 for(int i = 0; i < listaProductos.Count; i++)
                 {
-                    if(listaProductos.ElementAt(i).getNombre().Equals(value))
+                    if(listaProductos.ElementAt(i).getNombre().Contains(value))
                     {
                         return i;
                     }
@@ -52,7 +52,6 @@ namespace Controlador
             prod_precio.Visible = true;
             prod_categoria.Visible = true;
             prod_stock.Visible = true;
-            prod_modo.Visible = true;
         }
         public void hideFields()
         {
@@ -82,6 +81,10 @@ namespace Controlador
                     if(listaProductos.ElementAt(idx).getPerm() == 2)
                     {
                         prod_modo.Visible = true;
+                    }
+                    else
+                    {
+                        prod_modo.Visible = false;
                     }
                 }
                 else
@@ -134,14 +137,14 @@ namespace Controlador
         {
             if (cb2.Checked)
             {
-                cb2.Checked = false;
+                cb1.Checked = false;
             }
         }
         private void cb1_CheckedChanged(object sender, EventArgs e)
         {
             if (cb1.Checked)
             {
-                cb1.Checked = false;
+                cb2.Checked = false;
             }
         }
         private void TBusqueda_Enter(object sender, EventArgs e)

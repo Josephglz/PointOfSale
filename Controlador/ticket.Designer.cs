@@ -100,7 +100,7 @@ namespace Controlador
             this.lDireccion.Name = "lDireccion";
             this.lDireccion.Size = new System.Drawing.Size(319, 26);
             this.lDireccion.TabIndex = 42;
-            this.lDireccion.Text = "Calle Haiti #305, C.P. 893605, Tampico, Tamps.";
+            this.lDireccion.Text = "Dirección Calle,  #999, Colonia, C.P. 33333, Tampico, Tamps.";
             // 
             // lFecha
             // 

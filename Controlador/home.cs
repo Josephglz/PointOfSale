@@ -213,7 +213,7 @@ namespace Controlador
         }
         private void btnTicket_Click(object sender, EventArgs e)
         {
-
+            showAlert(2, "Proximamente...", 2);
         }
         private void bVender_Click(object sender, EventArgs e)
         {
@@ -532,12 +532,15 @@ namespace Controlador
         {
 
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             search vBuscar = new search(listaProductos);
             vBuscar.ShowDialog();
 
+        }
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            showAlert(2, "Próximamente...", 2);
         }
     }
 }
